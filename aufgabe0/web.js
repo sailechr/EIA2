@@ -5,5 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (name) {
         alert("Hallo" + name + ":)");
     }
+    document.getElementById("eingabename").innerHTML = name;
 });
 //# sourceMappingURL=web.js.map

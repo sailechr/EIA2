@@ -1,0 +1,10 @@
+body{background-color:yellowgreen;
+font-size:2em;
+color:white;
+font-style:"sansserif";}
+
+
+
+section{display:inline;}
+#eingabename{font-size:3em;
+font-weight:bold;}
