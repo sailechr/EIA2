@@ -23,7 +23,7 @@ for (let i: number = 0; i < 64; i++) {
 //    else{    document.write(
 //      "<table><tr><td>" + zahlRice + "</td></tr></table>"
 //    );}
-    } 
+    
    
   
 
