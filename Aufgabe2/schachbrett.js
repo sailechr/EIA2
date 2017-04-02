@@ -8,29 +8,33 @@
 //Er wurde nicht kopiert und auch nicht diktiert.
 document.addEventListener('DOMContentLoaded', function () {
     let zahlRice = 1;
+    let zeile = 0;
     for (let i = 0; i < 64; i++) {
-        zahlRice.toExponential(5);
+        let table = document.createElement("table");
+        document.body.appendChild(table);
+        table.textContent = zahlRice.toExponential(5);
         zahlRice = zahlRice * 2;
         zahlRice.toString();
+        if (i % 8 == 0) {
+            table.className += "abbruch";
+            zeile++;
+        }
+        if (zeile % 2 == 1) {
+            if (i % 2 == 1) {
+                table.className += "black";
+            }
+            else {
+                table.className += "white";
+            }
+            if (zeile % 2 == 0) {
+                if (i % 2 == 0) {
+                    table.className += "white";
+                }
+                else {
+                    table.className += "black";
+                }
+            }
+        }
     }
-    //   if(i%2 == 0 ){
-    //        = zahlRice;
-    //        }
-    //    if(i%2 == 1)
-    //        {div.style.backgroundColor = "white";
-    //    }
-    //    if(zeile %2 == 0){
-    //   if(i%2 == 0){
-    //       div.style.backgroundColor = "white"
-    //        }
-    //   if(i%2 == 1)
-    //        {div.style.backgroundColor = "black";
-    //}
-    //}
-    //    
-    // 
-    // }
-    //for(let zeile: number =0; zeile <8; zeile++)
-    //{if(zeile % 2==0);}
 });
 //# sourceMappingURL=schachbrett.js.map

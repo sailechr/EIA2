@@ -10,25 +10,26 @@ Er wurde nicht kopiert und auch nicht diktiert.*/
 
 
 
-table{
-		width:600px; 
-		height:600px;
-}
-
-
-
-
-{
-	color:white;
-   
+table{width:100px;
+	height:100px;
+	color:yellowgreen;
+    position:static;
+	border-width:1px;
+	border-style:dashed;
+	border-color: yellowgreen;
 	float:left;
 	padding:1.25px;
 	font-weight:bold;
 	font-size:0.74em;
 	}
-.black{background-color:black;
-color:yellowgreen;}
+.black{background-color:black;}
 
-.white{background-color:white;
-color:yellowgreen;}
+.white{background-color:white;}
+.abbruch{  
+
+	clear:both;
+	
+	
+	/*Umbruch des Flussverhaltens*/	
+}  /*Flussverhalten wird nach jedem 8 Element unterborchen*/
 
