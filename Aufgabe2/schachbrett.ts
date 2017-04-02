@@ -7,43 +7,37 @@
 //dass ich diesen Code selbst geschrieben habe. 
 //Er wurde nicht kopiert und auch nicht diktiert.
 document.addEventListener('DOMContentLoaded', function () {
-let zahlRice: number=1;
-let zeile: number=0;
+    let zahlRice: number=1;
+let zeile: number=1;
 
 for (let i: number = 0; i < 64; i++) {
-    let table: HTMLTableElement = document.createElement("table");
-     document.body.appendChild(table);
-    table.textContent = zahlRice.toExponential(5);
+    let div: HTMLDivElement = document.createElement("div");
+     document.body.appendChild(div);
+    div.textContent = zahlRice.toExponential(5);
     zahlRice= zahlRice *2;
     zahlRice.toString();
     
-if(i % 8 == 0)
-   {table.className +="abbruch";
+ 
+   
+   if(i % 8 == 0)
+   {div.className +="abbruch";
    zeile ++;
 }
-if(zeile % 2 == 1){
-   if(i%2 == 1 ){
-        table.className += "black";
+        if (zeile % 2 == 1) {
+            if (i % 2 == 1) {
+                div.className += "black";
+            }
+            else {
+                div.className += "white";
+            }
+            if (zeile % 2 == 0) {
+                if (i % 2 == 0) {
+                    div.className += "white";
+                }
+                else {
+                    div.className += "black";
+                }
+            }
         }
-    else
-        {table.className += "white";
     }
-    if(zeile %2 == 0){
-   if(i%2 == 0){
-      table.className += "white"
-        }
-   else
-        {table.className += "black";
-}
-}
-    
- 
- }
-  
-}
-
-
-
 });
-
-

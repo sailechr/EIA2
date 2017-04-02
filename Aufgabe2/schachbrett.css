@@ -10,8 +10,8 @@ Er wurde nicht kopiert und auch nicht diktiert.*/
 
 
 
-table{width:100px;
-	height:100px;
+div{width:150px;
+	height:150px;
 	color:yellowgreen;
     position:static;
 	border-width:1px;
@@ -29,7 +29,6 @@ table{width:100px;
 
 	clear:both;
 	
-	
-	/*Umbruch des Flussverhaltens*/	
-}  /*Flussverhalten wird nach jedem 8 Element unterborchen*/
+}	
+	/*Umbruch des Flussverhaltens*/  /*Flussverhalten wird nach jedem 8 Element unterborchen*/
 
