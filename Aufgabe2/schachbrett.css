@@ -7,7 +7,9 @@ Hiermit versichere ich,
 dass ich diesen Code selbst geschrieben habe. 
 Er wurde nicht kopiert und auch nicht diktiert.*/
 
-
+body{
+	width: 1250px;
+}
 
 
 div{width:150px;
@@ -25,10 +27,5 @@ div{width:150px;
 .black{background-color:black;}
 
 .white{background-color:white;}
-.abbruch{  
 
-	clear:both;
-	
-}	
-	/*Umbruch des Flussverhaltens*/  /*Flussverhalten wird nach jedem 8 Element unterborchen*/
 

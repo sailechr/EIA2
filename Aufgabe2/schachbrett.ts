@@ -6,38 +6,34 @@
 //Hiermit versichere ich, 
 //dass ich diesen Code selbst geschrieben habe. 
 //Er wurde nicht kopiert und auch nicht diktiert.
-document.addEventListener('DOMContentLoaded', function () {
-    let zahlRice: number=1;
-let zeile: number=1;
+document.addEventListener("DOMContentLoaded", function(): void {
 
-for (let i: number = 0; i < 64; i++) {
-    let div: HTMLDivElement = document.createElement("div");
-     document.body.appendChild(div);
-    div.textContent = zahlRice.toExponential(5);
-    zahlRice= zahlRice *2;
-    zahlRice.toString();
-    
- 
-   
-   if(i % 8 == 0)
-   {div.className +="abbruch";
-   zeile ++;
-}
-        if (zeile % 2 == 1) {
-            if (i % 2 == 1) {
-                div.className += "black";
-            }
-            else {
-                div.className += "white";
-            }
-            if (zeile % 2 == 0) {
-                if (i % 2 == 0) {
-                    div.className += "white";
-                }
-                else {
-                    div.className += "black";
-                }
-            }
+    let zahlRice: number = 1;
+    let zeile: number = 0;
+
+    for (let i: number = 0; i < 64; i++) {
+        let div: HTMLElement = document.createElement("div");
+
+        if (((i + zeile) % 2) == 0) {
+            div.className = "brett black";
         }
+        else {
+            div.className = "brett white";
+        }
+
+        if (((i + 1) % 8) == 0) {
+            zeile++;
+        }
+        if (zahlRice >= 16384) {
+            div.textContent = zahlRice.toExponential(4).toString();
+            zahlRice = zahlRice * 2;
+            document.body.appendChild(div);
+        }
+        else {
+            div.textContent = zahlRice.toString();
+            zahlRice = zahlRice * 2;
+            document.body.appendChild(div);
+        }
+
     }
 });
