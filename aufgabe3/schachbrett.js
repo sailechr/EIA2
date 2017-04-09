@@ -42,4 +42,5 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+//rest habe ich nicht hinbekommen :((
 //# sourceMappingURL=schachbrett.js.map
