@@ -1,0 +1,33 @@
+
+div {
+	height: 300px;
+    width: 250px;
+    border: 2px dashed yellowgreen;
+    text-align: center;
+    padding-top:20px;
+    float:left;
+}
+
+
+#firststack {
+	color:black; 
+	background-color:orange;
+	opacity: 0.6;
+	margin-left: 0px;
+	margin-top: 0px,	
+}
+
+
+
+.secondstack {
+	background-color: orange;
+	margin-left: 10px;
+	margin-top: 500px;
+}
+
+#thirdstack {
+    background-color: orange;
+    opacity: 0.6;
+    margin-left: 10px;
+    margin-top: -824px;
+}
