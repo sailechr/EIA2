@@ -1,4 +1,6 @@
-
+body{background-image: url(DSC_0020.JPG);
+background-repeat: no-repeat;
+background-size:cover;}
 div {
 	height: 240px;
     width: 250px;
@@ -25,6 +27,7 @@ div {
     margin-top: 400px;
     float: left;
     width: 15%;
+    opacity:0.5;
 }
 
 #thirdstack {
