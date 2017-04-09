@@ -1,0 +1,48 @@
+/*Aufgabe 2
+Name: saile christian
+Matrikel: 254877
+Datum: 2.April 2017
+	
+Hiermit versichere ich, 
+dass ich diesen Code selbst geschrieben habe. 
+Er wurde nicht kopiert und auch nicht diktiert.*/
+body{
+	width: 1250px;
+}
+/*Umbruch des Flussverhaltens*/  /*Flussverhalten wird nach jedem 8 Element unterborchen*/
+
+
+div{width:150px;
+	height:150px;
+	color:yellowgreen;
+    position:static;
+	border-width:1px;
+	border-style:dashed;
+	border-color: yellowgreen;
+	float:left;
+	padding:1.25px;
+	font-weight:bold;
+	font-size:0.74em;
+	}
+.black{background-color:black;}
+
+.white{background-color:white;}
+.div{  
+
+	background-color:orange;
+	opacity:0.7;
+	border: 0.7px solid white;
+	color:white;
+	
+}
+.box{position: absolute;
+	background-color:black;
+	padding:0.5em 1em
+	color: white;
+	border:1px white solid;
+	z-index:2;
+	display: none;}
+
+	
+	
+
