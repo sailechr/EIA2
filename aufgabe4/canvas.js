@@ -20,6 +20,13 @@ var CANVAS4;
         crc2.closePath();
         crc2.fill();
         crc2.stroke();
+        //lawn
+        crc2.beginPath();
+        crc2.fillStyle = "#7FFFd4 ";
+        crc2.rect(0, 0, canvas.width, 400);
+        crc2.closePath();
+        crc2.fill();
+        crc2.stroke();
         //sun alles andere hier außer funktionen        
         crc2.beginPath();
         crc2.fillStyle = "#FFFF00";
