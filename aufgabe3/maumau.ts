@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function(): void {
     //beim  klicken werden die Karten verteilt
     nachziehStapel.addEventListener("click", function(): void {
         //Zufallskarte generieren
+        <-- nur wenn cards.length > 0 und noch leere handkarten da!
         let zufallsKarte: string = cards.splice(Math.round(Math.random() * (cards.length - 1)), 1)[0];
         // Variable als Funktion mit Rüchgabewert
         let leerKarte: any = sucheLeerKarte();
