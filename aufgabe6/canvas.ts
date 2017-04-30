@@ -192,12 +192,12 @@ namespace CANVAS4 {
         drawDeko(164, 275, "#Da70d6", "#Da70d6");
         //Bienenstock
         drawBienenstock(500, 210, "orange", "black");
-        //gemaltes Bild abspeichern
+        //gemaltes Bild speichern
         let imgData: ImageData = crc2.getImageData(0, 0, canvas.width, canvas.height);
         console.log(imgData);
         for (let i: number = 0; i < nBees; i++) {
-            x[i] = 280;
-            y[i] = 300;
+            x[i] = 300;
+            y[i] = 560;
 
 
         }
@@ -214,9 +214,8 @@ namespace CANVAS4 {
     }
     //Funktion neuen Bienen zeichnen
     function newBees(): void {
-        x.push(280);
-        y.push(300);
-        nBees++;
+        x.push(300);
+        y.push(560);
     }
 
     //clouds in the sky
@@ -781,13 +780,9 @@ namespace CANVAS4 {
     }
     function animate(): void {
         console.log("Animate called");
-
-
-
-
         for (let i: number = 0; i < x.length; i++) {
-            x[i] += Math.random() * 20 - 2;
-            y[i] += Math.random() * 40 - 2;
+            x[i] += Math.random() * 40 - 3;
+            y[i] += Math.random() * 70 - 2;
             if (x[i] >= 1280)
                 x[i] = 0;
             if (y[i] <= 0)
@@ -797,10 +792,7 @@ namespace CANVAS4 {
             if (y[i] > 720)
                 y[i] = 0;
             //Malen der Bienen an der neuen Position
-
             drawObject(x[i], y[i]);
-
-
         }
 
         window.setTimeout(animate, 20);

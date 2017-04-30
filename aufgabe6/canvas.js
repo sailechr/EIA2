@@ -165,12 +165,12 @@ var CANVAS4;
         drawDeko(164, 275, "#Da70d6", "#Da70d6");
         //Bienenstock
         drawBienenstock(500, 210, "orange", "black");
-        //gemaltes Bild abspeichern
+        //gemaltes Bild speichern
         let imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
         console.log(imgData);
         for (let i = 0; i < nBees; i++) {
-            x[i] = 280;
-            y[i] = 300;
+            x[i] = 300;
+            y[i] = 560;
         }
         crc2.putImageData(imgData, 0, 0);
         window.setTimeout(animate, 20);
@@ -179,9 +179,8 @@ var CANVAS4;
     }
     //Funktion neuen Bienen zeichnen
     function newBees() {
-        x.push(280);
-        y.push(300);
-        nBees++;
+        x.push(300);
+        y.push(560);
     }
     //clouds in the sky
     function drawCloud(_x, _y, _strokeColor, _fillColor) {
@@ -727,8 +726,8 @@ var CANVAS4;
     function animate() {
         console.log("Animate called");
         for (let i = 0; i < x.length; i++) {
-            x[i] += Math.random() * 20 - 2;
-            y[i] += Math.random() * 40 - 2;
+            x[i] += Math.random() * 40 - 3;
+            y[i] += Math.random() * 70 - 2;
             if (x[i] >= 1280)
                 x[i] = 0;
             if (y[i] <= 0)
