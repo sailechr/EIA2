@@ -201,7 +201,7 @@ namespace CANVAS4 {
 
 
         }
-        crc2.putImageData(imgData, 0, 0);
+       
         window.setTimeout(animate, 20);
         canvas.addEventListener("click", newBees); // beim klicken auf das Canvas entstehen neue Bienen
         canvas.addEventListener("touch", newBees); // beim drüberfahren entstehen ebenfalls neue Bienen
@@ -779,6 +779,7 @@ namespace CANVAS4 {
 
     }
     function animate(): void {
+         crc2.putImageData(imgData, 0, 0);
         console.log("Animate called");
         for (let i: number = 0; i < x.length; i++) {
             x[i] += Math.random() * 40 - 3;
@@ -802,7 +803,7 @@ namespace CANVAS4 {
 
         crc2.beginPath();
         crc2.moveTo(_x + 10, _y);
-        crc2.arc(_x + 10, _y, 5, (Math.PI / 180) * 90, (Math.PI / 180) * 270, true);
+        crc2.arc(_x + 10, _y, 5, (Math.PI / 180) * 90, (Math.PI / 180) * 270, false);
         crc2.fillStyle = "#ffff00";
         crc2.fill();
         crc2.closePath();
