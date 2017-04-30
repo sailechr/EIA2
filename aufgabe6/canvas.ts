@@ -199,7 +199,7 @@ namespace CANVAS4 {
             x[i] = 300;
             y[i] = 560;
 
-            crc2.putImageData(imgData, 0, 0);
+            
         }
 
         window.setTimeout(animate, 20);

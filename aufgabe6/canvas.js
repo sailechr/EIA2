@@ -171,7 +171,6 @@ var CANVAS4;
         for (let i = 0; i < nBees; i++) {
             x[i] = 300;
             y[i] = 560;
-            crc2.putImageData(imgData, 0, 0);
         }
         window.setTimeout(animate, 20);
         canvas.addEventListener("click", newBees); // beim klicken auf das Canvas entstehen neue Bienen
