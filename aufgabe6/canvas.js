@@ -166,7 +166,7 @@ var CANVAS4;
         //Bienenstock
         drawBienenstock(500, 210, "orange", "black");
         //gemaltes Bild speichern
-        let imgData = crc2.getImageData(0, 0, 1280, 720);
+        imgData = crc2.getImageData(0, 0, 1280, 720);
         console.log(imgData);
         for (let i = 0; i < nBees; i++) {
             x[i] = 300;
