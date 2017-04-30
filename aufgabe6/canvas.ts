@@ -193,15 +193,15 @@ namespace CANVAS4 {
         //Bienenstock
         drawBienenstock(500, 210, "orange", "black");
         //gemaltes Bild speichern
-        let imgData: ImageData = crc2.getImageData(0, 0, canvas.width, canvas.height);
+        let imgData: ImageData = crc2.getImageData(0, 0, 1280, 720);
         console.log(imgData);
         for (let i: number = 0; i < nBees; i++) {
             x[i] = 300;
             y[i] = 560;
 
-
+            crc2.putImageData(imgData, 0, 0);
         }
-       
+
         window.setTimeout(animate, 20);
         canvas.addEventListener("click", newBees); // beim klicken auf das Canvas entstehen neue Bienen
         canvas.addEventListener("touch", newBees); // beim drüberfahren entstehen ebenfalls neue Bienen
@@ -779,7 +779,7 @@ namespace CANVAS4 {
 
     }
     function animate(): void {
-         crc2.putImageData(imgData, 0, 0);
+        crc2.putImageData(imgData, 0, 0);
         console.log("Animate called");
         for (let i: number = 0; i < x.length; i++) {
             x[i] += Math.random() * 40 - 3;

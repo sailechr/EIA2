@@ -166,11 +166,12 @@ var CANVAS4;
         //Bienenstock
         drawBienenstock(500, 210, "orange", "black");
         //gemaltes Bild speichern
-        let imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
+        let imgData = crc2.getImageData(0, 0, 1280, 720);
         console.log(imgData);
         for (let i = 0; i < nBees; i++) {
             x[i] = 300;
             y[i] = 560;
+            crc2.putImageData(imgData, 0, 0);
         }
         window.setTimeout(animate, 20);
         canvas.addEventListener("click", newBees); // beim klicken auf das Canvas entstehen neue Bienen
