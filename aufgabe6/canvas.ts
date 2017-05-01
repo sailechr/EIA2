@@ -193,11 +193,11 @@ namespace CANVAS4 {
         //Bienenstock
         drawBienenstock(500, 210, "orange", "black");
         //gemaltes Bild speichern
-        imgData = crc2.getImageData(0, 0, 1280, 720);
+        imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
         console.log(imgData);
         for (let i: number = 0; i < nBees; i++) {
             x[i] = 300;
-            y[i] = 560;
+            y[i] = 580;
 
 
         }
@@ -215,7 +215,7 @@ namespace CANVAS4 {
     //Funktion neuen Bienen zeichnen
     function newBees(): void {
         x.push(300);
-        y.push(560);
+        y.push(580);
     }
 
     //clouds in the sky
@@ -780,16 +780,15 @@ namespace CANVAS4 {
     }
     function animate(): void {
         crc2.putImageData(imgData, 0, 0);
-        console.log("Animate called");
         for (let i: number = 0; i < x.length; i++) {
-            x[i] += Math.random() * 40 - 3;
-            y[i] += Math.random() * 70 - 2;
-            if (x[i] >= 1280)
+            x[i] += Math.random() * 3 - 2.7;
+            y[i] += Math.random() * 4.7 - 2.5;
+            if (x[i] >= 1270)
                 x[i] = 0;
             if (y[i] <= 0)
                 y[i] = 720;
             if (x[i] < 0)
-                x[i] = 1280;
+                x[i] = 1270;
             if (y[i] > 720)
                 y[i] = 0;
             //Malen der Bienen an der neuen Position
@@ -798,18 +797,43 @@ namespace CANVAS4 {
 
         window.setTimeout(animate, 20);
     }
-
+    //Bienen werden gezeichnet
     function drawObject(_x: number, _y: number): void {
-
+        crc2.beginPath();
+        crc2.fillStyle = "yellow";
+        crc2.moveTo(_x + 10, _y);
+        crc2.arc(_x + 10, _y, 13, 0, Math.PI * 2, true);
+        crc2.fill();
+        crc2.closePath();
+        crc2.beginPath();
+        crc2.fillStyle = "white";
+        crc2.arc(_x - 5, _y + 11, 12, 0, Math.PI * 2, true);
+        crc2.arc(_x + 5, _y - 11, 12, 0, Math.PI * 2, true);
+        crc2.moveTo(_x, _y - 5);
+        crc2.rect(_x, _y - 5, 5, 14);
+        crc2.globalAlpha = 0.5;
+        crc2.fill();
+        crc2.closePath();
         crc2.beginPath();
         crc2.moveTo(_x + 10, _y);
-        crc2.arc(_x + 10, _y, 5, (Math.PI / 180) * 90, (Math.PI / 180) * 270, false);
-        crc2.fillStyle = "#ffff00";
+        crc2.arc(_x + 10, _y, 14, (Math.PI / 180) * 90, (Math.PI / 180) * 270, true);
+        crc2.fillStyle = "yellow";
         crc2.fill();
         crc2.closePath();
         crc2.beginPath();
         crc2.moveTo(_x, _y - 5);
         crc2.rect(_x, _y - 5, 5, 10);
+        crc2.fill();
+        crc2.closePath();
+        crc2.beginPath();
+        crc2.moveTo(_x + 5, _y - 5);
+        crc2.rect(_x + 5, _y - 5, 5, 10);
+        crc2.fillStyle = "#000000";
+        crc2.fill();
+        crc2.closePath();
+        crc2.beginPath();
+        crc2.moveTo(_x, _y);
+        crc2.arc(_x, _y, 5, (Math.PI / 180) * 90, (Math.PI / 180) * 270, false);
         crc2.fill();
         crc2.closePath();
         crc2.beginPath();
@@ -853,16 +877,38 @@ namespace CANVAS4 {
         crc2.moveTo(_x + 5, _y);
         crc2.quadraticCurveTo(_x - 5, _y - 12, _x + 5, _y - 12);
         crc2.closePath();
-        crc2.globalAlpha = 0.7;
-        crc2.fillStyle = "#21a8e7";
-        crc2.fill();
         crc2.beginPath();
-        crc2.moveTo(_x + 10, _y);
-        crc2.lineTo(_x + 5, _y);
-        crc2.lineTo(_x + 5, _y - 12);
-        crc2.closePath();
+        crc2.moveTo(_x, _y);
+        crc2.arc(_x, _y, 5, (Math.PI / 180) * 90, (Math.PI / 180) * 270, false);
         crc2.fill();
-        crc2.globalAlpha = 1;
+        crc2.closePath();
+        crc2.beginPath();
+        crc2.moveTo(_x + 16, _y - 6);
+        crc2.arcTo(_x + 18, _y - 9, _x + 20, _y - 15, 10);
+        crc2.strokeStyle = "#000000";
+        crc2.stroke();
+        crc2.closePath();
+        crc2.beginPath();
+        crc2.moveTo(_x + 16, _y - 3);
+        crc2.arc(_x + 16, _y - 3, 4, 0, (Math.PI) * 2, false);
+        crc2.fillStyle = "#ffff00";
+        crc2.fill();
+        crc2.closePath();
+        crc2.beginPath();
+        crc2.moveTo(_x + 17, _y - 4);
+        crc2.arc(_x + 17, _y - 4, 1, 0, (Math.PI) * 2, false);
+        crc2.fillStyle = "#000000";
+        crc2.fill();
+        crc2.closePath();
+        crc2.beginPath();
+        crc2.moveTo(_x - 8, _y);
+        crc2.lineTo(_x - 4, _y - 2);
+        crc2.lineTo(_x - 4, _y + 2);
+        crc2.closePath();
+
+
+
+
 
     }
 }
