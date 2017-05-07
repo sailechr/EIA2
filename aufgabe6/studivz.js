@@ -1,3 +1,10 @@
+//Aufgabe: 6
+//Name: Saile Christian
+//Matrikel: 254877
+//Datum: 6.Mai 2017 
+//Hiermit versichere ich, dass ich diesen
+//Code selbst geschrieben habe. Er wurde
+//nicht kopiert und auch nicht diktiert.
 var StudiVZ;
 (function (StudiVZ) {
     //assoziatives Array(heterogen)
