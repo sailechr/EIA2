@@ -109,7 +109,10 @@ namespace Aufgabe7_Bees {
             // let f: Flowers = new Flowers();
             //f.drawFlowers();
             //colorArray[colorIndex];
-
+            <-- wenn die Blumenklasse korrigiert wurde, müsste hier in etwa lediglich das stehen:
+            let f: Flower = new Flower(colorArray[colorIndex]);
+            f.draw();
+            -->
         }
         //Funktion drwaDeko (Früchte am Baum) Aufruf der funktion
         drawDeko(173, 429, "#Da70d6", "#Da70d6");
