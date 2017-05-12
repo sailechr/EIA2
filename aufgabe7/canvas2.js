@@ -43,83 +43,8 @@ var Aufgabe7_Bees;
         Aufgabe7_Bees.crc2.closePath();
         Aufgabe7_Bees.crc2.fill();
         Aufgabe7_Bees.crc2.stroke();
-        //Baumstamm
-        Aufgabe7_Bees.crc2.beginPath();
-        Aufgabe7_Bees.crc2.fillStyle = "brown ";
-        Aufgabe7_Bees.crc2.fillRect(137, 470, 60, 240);
-        Aufgabe7_Bees.crc2.closePath();
-        Aufgabe7_Bees.crc2.fill();
-        Aufgabe7_Bees.crc2.stroke();
-        //tree
-        Aufgabe7_Bees.crc2.beginPath();
-        Aufgabe7_Bees.crc2.fillStyle = "#6B8e23 ";
-        Aufgabe7_Bees.crc2.arc(185, 268, 97, 0, Math.PI * 2, true);
-        Aufgabe7_Bees.crc2.closePath();
-        Aufgabe7_Bees.crc2.fill();
-        Aufgabe7_Bees.crc2.beginPath();
-        Aufgabe7_Bees.crc2.fillStyle = "#6B8e23 ";
-        Aufgabe7_Bees.crc2.arc(215, 373, 110, 0, Math.PI * 2, true);
-        Aufgabe7_Bees.crc2.closePath();
-        Aufgabe7_Bees.crc2.fill();
-        Aufgabe7_Bees.crc2.beginPath();
-        Aufgabe7_Bees.crc2.fillStyle = "#6B8e23 ";
-        Aufgabe7_Bees.crc2.arc(130, 382, 100, 0, Math.PI * 2, true);
-        Aufgabe7_Bees.crc2.closePath();
-        Aufgabe7_Bees.crc2.fill();
-        Aufgabe7_Bees.crc2.beginPath();
-        Aufgabe7_Bees.crc2.fillStyle = "#6B8e23";
-        Aufgabe7_Bees.crc2.arc(207.99, 420, 74, 0, Math.PI * 2, true);
-        Aufgabe7_Bees.crc2.closePath();
-        Aufgabe7_Bees.crc2.fill();
-        Aufgabe7_Bees.crc2.beginPath();
-        Aufgabe7_Bees.crc2.fillStyle = "#6B8e23";
-        Aufgabe7_Bees.crc2.arc(145, 420, 74, 0, Math.PI * 2, true);
-        Aufgabe7_Bees.crc2.closePath();
-        Aufgabe7_Bees.crc2.fill();
-        Aufgabe7_Bees.crc2.beginPath();
-        Aufgabe7_Bees.crc2.fillStyle = "#6B8e23";
-        Aufgabe7_Bees.crc2.arc(173, 429, 81, 0, Math.PI * 2, true);
-        Aufgabe7_Bees.crc2.closePath();
-        Aufgabe7_Bees.crc2.fill();
-        //draw mountains
-        //quadratische Kurve = quadratic Curve(Bogen für Hügel/Berge/auch Bezierkurve)
-        //besteht aus 2 Punkten
-        Aufgabe7_Bees.crc2.beginPath();
-        Aufgabe7_Bees.crc2.stroke();
-        Aufgabe7_Bees.crc2.fill();
-        Aufgabe7_Bees.crc2.lineWidth = 6;
-        Aufgabe7_Bees.crc2.strokeStyle = "black";
-        //Farbverlauf von schneebedeckten Gipfel zu Fels
-        let grad = Aufgabe7_Bees.crc2.createLinearGradient(80, 230, 96, 80);
-        grad.addColorStop(0, "grey");
-        grad.addColorStop(1, "whitesmoke");
-        Aufgabe7_Bees.crc2.fillStyle = grad;
-        Aufgabe7_Bees.crc2.moveTo(578, 400);
-        Aufgabe7_Bees.crc2.quadraticCurveTo(890, -150, 1050, 400);
-        Aufgabe7_Bees.crc2.closePath();
-        Aufgabe7_Bees.crc2.stroke();
-        Aufgabe7_Bees.crc2.fill();
-        Aufgabe7_Bees.crc2.beginPath();
-        Aufgabe7_Bees.crc2.stroke();
-        Aufgabe7_Bees.crc2.fill();
-        Aufgabe7_Bees.crc2.lineWidth = 6;
-        Aufgabe7_Bees.crc2.strokeStyle = "black"; // line color
-        Aufgabe7_Bees.crc2.fillStyle = grad;
-        Aufgabe7_Bees.crc2.moveTo(778, 400);
-        Aufgabe7_Bees.crc2.quadraticCurveTo(1300, -150, 1400, 400);
-        Aufgabe7_Bees.crc2.closePath();
-        Aufgabe7_Bees.crc2.stroke();
-        Aufgabe7_Bees.crc2.fill();
-        Aufgabe7_Bees.crc2.beginPath();
-        Aufgabe7_Bees.crc2.stroke();
-        Aufgabe7_Bees.crc2.fill();
-        Aufgabe7_Bees.crc2.lineWidth = 6;
-        Aufgabe7_Bees.crc2.strokeStyle = "black"; // line color
-        Aufgabe7_Bees.crc2.moveTo(328, 400);
-        Aufgabe7_Bees.crc2.quadraticCurveTo(600, -150, 900, 400);
-        Aufgabe7_Bees.crc2.closePath();
-        Aufgabe7_Bees.crc2.stroke();
-        Aufgabe7_Bees.crc2.fill();
+        drawTree();
+        drawMountains(578, 400, "black");
         drawCloud(1000, 120, "#F5F5F5", "#F5F5F5");
         drawCloud(920, 92, "#F5F5F5", "#F5F5F5");
         drawCloud(520, 130, "#F5F5F5 ", "#F5F5F5");
@@ -672,6 +597,86 @@ var Aufgabe7_Bees;
         Aufgabe7_Bees.crc2.fillStyle = "#D2691E  ";
         Aufgabe7_Bees.crc2.strokeStyle = "#D2691E  ";
         Aufgabe7_Bees.crc2.arc(1186, 436, 9, 0, Math.PI * 2, true);
+        Aufgabe7_Bees.crc2.closePath();
+        Aufgabe7_Bees.crc2.fill();
+    }
+    function drawMountains(_x, _y, _strokeColor) {
+        //quadratische Kurve = quadratic Curve(Bogen für Hügel/Berge/auch Bezierkurve)
+        //besteht aus 2 Punkten
+        Aufgabe7_Bees.crc2.beginPath();
+        Aufgabe7_Bees.crc2.stroke();
+        Aufgabe7_Bees.crc2.fill();
+        Aufgabe7_Bees.crc2.lineWidth = 6;
+        Aufgabe7_Bees.crc2.strokeStyle = "black";
+        //Farbverlauf von schneebedeckten Gipfel zu Fels
+        let grad = Aufgabe7_Bees.crc2.createLinearGradient(80, 230, 96, 80);
+        grad.addColorStop(0, "grey");
+        grad.addColorStop(1, "whitesmoke");
+        Aufgabe7_Bees.crc2.fillStyle = grad;
+        Aufgabe7_Bees.crc2.moveTo(578, 400);
+        Aufgabe7_Bees.crc2.quadraticCurveTo(890, -150, 1050, 400);
+        Aufgabe7_Bees.crc2.closePath();
+        Aufgabe7_Bees.crc2.stroke();
+        Aufgabe7_Bees.crc2.fill();
+        Aufgabe7_Bees.crc2.beginPath();
+        Aufgabe7_Bees.crc2.stroke();
+        Aufgabe7_Bees.crc2.fill();
+        Aufgabe7_Bees.crc2.lineWidth = 6;
+        Aufgabe7_Bees.crc2.strokeStyle = "black"; // line color
+        Aufgabe7_Bees.crc2.fillStyle = grad;
+        Aufgabe7_Bees.crc2.moveTo(778, 400);
+        Aufgabe7_Bees.crc2.quadraticCurveTo(1300, -150, 1400, 400);
+        Aufgabe7_Bees.crc2.closePath();
+        Aufgabe7_Bees.crc2.stroke();
+        Aufgabe7_Bees.crc2.fill();
+        Aufgabe7_Bees.crc2.beginPath();
+        Aufgabe7_Bees.crc2.stroke();
+        Aufgabe7_Bees.crc2.fill();
+        Aufgabe7_Bees.crc2.lineWidth = 6;
+        Aufgabe7_Bees.crc2.strokeStyle = "black"; // line color
+        Aufgabe7_Bees.crc2.moveTo(328, 400);
+        Aufgabe7_Bees.crc2.quadraticCurveTo(600, -150, 900, 400);
+        Aufgabe7_Bees.crc2.closePath();
+        Aufgabe7_Bees.crc2.stroke();
+        Aufgabe7_Bees.crc2.fill();
+    }
+    function drawTree() {
+        //Baumstamm
+        Aufgabe7_Bees.crc2.beginPath();
+        Aufgabe7_Bees.crc2.fillStyle = "brown ";
+        Aufgabe7_Bees.crc2.fillRect(137, 470, 60, 240);
+        Aufgabe7_Bees.crc2.closePath();
+        Aufgabe7_Bees.crc2.fill();
+        Aufgabe7_Bees.crc2.stroke();
+        //tree
+        Aufgabe7_Bees.crc2.beginPath();
+        Aufgabe7_Bees.crc2.fillStyle = "#6B8e23 ";
+        Aufgabe7_Bees.crc2.arc(185, 268, 97, 0, Math.PI * 2, true);
+        Aufgabe7_Bees.crc2.closePath();
+        Aufgabe7_Bees.crc2.fill();
+        Aufgabe7_Bees.crc2.beginPath();
+        Aufgabe7_Bees.crc2.fillStyle = "#6B8e23 ";
+        Aufgabe7_Bees.crc2.arc(215, 373, 110, 0, Math.PI * 2, true);
+        Aufgabe7_Bees.crc2.closePath();
+        Aufgabe7_Bees.crc2.fill();
+        Aufgabe7_Bees.crc2.beginPath();
+        Aufgabe7_Bees.crc2.fillStyle = "#6B8e23 ";
+        Aufgabe7_Bees.crc2.arc(130, 382, 100, 0, Math.PI * 2, true);
+        Aufgabe7_Bees.crc2.closePath();
+        Aufgabe7_Bees.crc2.fill();
+        Aufgabe7_Bees.crc2.beginPath();
+        Aufgabe7_Bees.crc2.fillStyle = "#6B8e23";
+        Aufgabe7_Bees.crc2.arc(207.99, 420, 74, 0, Math.PI * 2, true);
+        Aufgabe7_Bees.crc2.closePath();
+        Aufgabe7_Bees.crc2.fill();
+        Aufgabe7_Bees.crc2.beginPath();
+        Aufgabe7_Bees.crc2.fillStyle = "#6B8e23";
+        Aufgabe7_Bees.crc2.arc(145, 420, 74, 0, Math.PI * 2, true);
+        Aufgabe7_Bees.crc2.closePath();
+        Aufgabe7_Bees.crc2.fill();
+        Aufgabe7_Bees.crc2.beginPath();
+        Aufgabe7_Bees.crc2.fillStyle = "#6B8e23";
+        Aufgabe7_Bees.crc2.arc(173, 429, 81, 0, Math.PI * 2, true);
         Aufgabe7_Bees.crc2.closePath();
         Aufgabe7_Bees.crc2.fill();
     }

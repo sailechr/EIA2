@@ -64,89 +64,12 @@ namespace Aufgabe7_Bees {
 
 
 
-        //Baumstamm
-        crc2.beginPath();
-        crc2.fillStyle = "brown ";
-        crc2.fillRect(137, 470, 60, 240);
-        crc2.closePath();
-        crc2.fill();
-        crc2.stroke();
-
-        //tree
-        crc2.beginPath();
-        crc2.fillStyle = "#6B8e23 ";
-        crc2.arc(185, 268, 97, 0, Math.PI * 2, true);
-        crc2.closePath();
-        crc2.fill();
-        crc2.beginPath();
-        crc2.fillStyle = "#6B8e23 ";
-        crc2.arc(215, 373, 110, 0, Math.PI * 2, true);
-        crc2.closePath();
-        crc2.fill();
-        crc2.beginPath();
-        crc2.fillStyle = "#6B8e23 ";
-        crc2.arc(130, 382, 100, 0, Math.PI * 2, true);
-        crc2.closePath();
-        crc2.fill();
-        crc2.beginPath();
-        crc2.fillStyle = "#6B8e23";
-        crc2.arc(207.99, 420, 74, 0, Math.PI * 2, true);
-        crc2.closePath();
-        crc2.fill();
-        crc2.beginPath();
-        crc2.fillStyle = "#6B8e23";
-        crc2.arc(145, 420, 74, 0, Math.PI * 2, true);
-        crc2.closePath();
-        crc2.fill();
-        crc2.beginPath();
-        crc2.fillStyle = "#6B8e23";
-        crc2.arc(173, 429, 81, 0, Math.PI * 2, true);
-        crc2.closePath();
-        crc2.fill();
 
 
 
 
-        //draw mountains
-        //quadratische Kurve = quadratic Curve(Bogen für Hügel/Berge/auch Bezierkurve)
-        //besteht aus 2 Punkten
-        crc2.beginPath();
-        crc2.stroke();
-        crc2.fill();
-        crc2.lineWidth = 6;
-        crc2.strokeStyle = "black";
-        //Farbverlauf von schneebedeckten Gipfel zu Fels
-        let grad: CanvasGradient = crc2.createLinearGradient(80, 230, 96, 80);
-        grad.addColorStop(0, "grey");
-        grad.addColorStop(1, "whitesmoke");
-        crc2.fillStyle = grad;
-        crc2.moveTo(578, 400);
-        crc2.quadraticCurveTo(890, -150, 1050, 400);
-        crc2.closePath();
-        crc2.stroke();
-        crc2.fill();
-        crc2.beginPath();
-        crc2.stroke();
-        crc2.fill();
-        crc2.lineWidth = 6;
-        crc2.strokeStyle = "black"; // line color
-        crc2.fillStyle = grad;
-        crc2.moveTo(778, 400);
-        crc2.quadraticCurveTo(1300, -150, 1400, 400);
-        crc2.closePath();
-        crc2.stroke();
-        crc2.fill();
-        crc2.beginPath();
-        crc2.stroke();
-        crc2.fill();
-        crc2.lineWidth = 6;
-        crc2.strokeStyle = "black"; // line color
-        crc2.moveTo(328, 400);
-        crc2.quadraticCurveTo(600, -150, 900, 400);
-        crc2.closePath();
-        crc2.stroke();
-        crc2.fill();
-
+        drawTree();
+        drawMountains(578, 400, "black");
         drawCloud(1000, 120, "#F5F5F5", "#F5F5F5");
         drawCloud(920, 92, "#F5F5F5", "#F5F5F5");
         drawCloud(520, 130, "#F5F5F5 ", "#F5F5F5");
@@ -732,6 +655,88 @@ namespace Aufgabe7_Bees {
         crc2.closePath();
         crc2.fill();
 
+    }
+    function drawMountains(_x: number, _y: number, _strokeColor: string): void {//draw mountains
+        //quadratische Kurve = quadratic Curve(Bogen für Hügel/Berge/auch Bezierkurve)
+        //besteht aus 2 Punkten
+        crc2.beginPath();
+        crc2.stroke();
+        crc2.fill();
+        crc2.lineWidth = 6;
+        crc2.strokeStyle = "black";
+        //Farbverlauf von schneebedeckten Gipfel zu Fels
+        let grad: CanvasGradient = crc2.createLinearGradient(80, 230, 96, 80);
+        grad.addColorStop(0, "grey");
+        grad.addColorStop(1, "whitesmoke");
+        crc2.fillStyle = grad;
+        crc2.moveTo(578, 400);
+        crc2.quadraticCurveTo(890, -150, 1050, 400);
+        crc2.closePath();
+        crc2.stroke();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.stroke();
+        crc2.fill();
+        crc2.lineWidth = 6;
+        crc2.strokeStyle = "black"; // line color
+        crc2.fillStyle = grad;
+        crc2.moveTo(778, 400);
+        crc2.quadraticCurveTo(1300, -150, 1400, 400);
+        crc2.closePath();
+        crc2.stroke();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.stroke();
+        crc2.fill();
+        crc2.lineWidth = 6;
+        crc2.strokeStyle = "black"; // line color
+        crc2.moveTo(328, 400);
+        crc2.quadraticCurveTo(600, -150, 900, 400);
+        crc2.closePath();
+        crc2.stroke();
+        crc2.fill();
+    }
+
+    function drawTree(): void {
+        //Baumstamm
+        crc2.beginPath();
+        crc2.fillStyle = "brown ";
+        crc2.fillRect(137, 470, 60, 240);
+        crc2.closePath();
+        crc2.fill();
+        crc2.stroke();
+
+        //tree
+        crc2.beginPath();
+        crc2.fillStyle = "#6B8e23 ";
+        crc2.arc(185, 268, 97, 0, Math.PI * 2, true);
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.fillStyle = "#6B8e23 ";
+        crc2.arc(215, 373, 110, 0, Math.PI * 2, true);
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.fillStyle = "#6B8e23 ";
+        crc2.arc(130, 382, 100, 0, Math.PI * 2, true);
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.fillStyle = "#6B8e23";
+        crc2.arc(207.99, 420, 74, 0, Math.PI * 2, true);
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.fillStyle = "#6B8e23";
+        crc2.arc(145, 420, 74, 0, Math.PI * 2, true);
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.fillStyle = "#6B8e23";
+        crc2.arc(173, 429, 81, 0, Math.PI * 2, true);
+        crc2.closePath();
+        crc2.fill();
     }
     function drawBienenstock(_x: number, _y: number, _strokeColor: string, _fillColor: string): void {
         crc2.beginPath();
