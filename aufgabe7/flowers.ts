@@ -8,7 +8,7 @@ namespace Aufgabe7_Bees {
         crc2: CanvasRenderingContext2D;
 
         constructor(color: string) {
-            
+
             //            // define an array of different colors
             //
             //            colorArray.push("red"); // 0
