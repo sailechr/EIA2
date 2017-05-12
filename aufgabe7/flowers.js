@@ -1,18 +1,18 @@
 var Aufgabe7_Bees;
 (function (Aufgabe7_Bees) {
     class Flowers {
-        //        constructor(colorArray: string[]) {
-        //            // define an array of different colors
-        //
-        //            colorArray.push("red"); // 0
-        //            colorArray.push("orange"); // 1
-        //            colorArray.push("blue"); // 2
-        //            colorArray.push("darkorchid"); //3
-        //            colorArray.push("goldenrod"); //4
-        //            colorArray.push("tomato"); // 5
-        //            console.log(colorArray);
-        //
-        //        }
+        constructor(color) {
+            //            // define an array of different colors
+            //
+            //            colorArray.push("red"); // 0
+            //            colorArray.push("orange"); // 1
+            //            colorArray.push("blue"); // 2
+            //            colorArray.push("darkorchid"); //3
+            //            colorArray.push("goldenrod"); //4
+            //            colorArray.push("tomato"); // 5
+            //            console.log(colorArray);
+            //
+        }
         // Funktion "drawFlowers"
         drawFlowers() {
             Aufgabe7_Bees.crc2.beginPath();

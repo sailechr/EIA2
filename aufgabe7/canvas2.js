@@ -12,7 +12,7 @@ var Aufgabe7_Bees;
     let nBees = 10;
     let imgData;
     let squares = [];
-    Aufgabe7_Bees.colorArray = [];
+    let flowers = [];
     function init() {
         canvas = document.getElementsByTagName("canvas")[0];
         Aufgabe7_Bees.crc2 = canvas.getContext("2d");
@@ -130,13 +130,14 @@ var Aufgabe7_Bees;
         drawDekoBushes(874, 400, "#Da70d6", "#Da70d6");
         drawDekoBushes1(1274, 400, "#Da70d6", "#Da70d6");
         // define an array of different colors
-        Aufgabe7_Bees.colorArray.push("red"); // 0
-        Aufgabe7_Bees.colorArray.push("orange"); // 1
-        Aufgabe7_Bees.colorArray.push("blue"); // 2
-        Aufgabe7_Bees.colorArray.push("darkorchid"); //3
-        Aufgabe7_Bees.colorArray.push("goldenrod"); //4
-        Aufgabe7_Bees.colorArray.push("tomato"); // 5
-        console.log(Aufgabe7_Bees.colorArray);
+        let colorArray = [];
+        colorArray.push("red"); // 0
+        colorArray.push("orange"); // 1
+        colorArray.push("blue"); // 2
+        colorArray.push("darkorchid"); //3
+        colorArray.push("goldenrod"); //4
+        colorArray.push("tomato"); // 5
+        console.log(colorArray);
         // define number of flowers
         var numFlowers = 70;
         // draw randomly placed flowers
@@ -144,10 +145,7 @@ var Aufgabe7_Bees;
             let centerX = (Math.random() * (1280 - 307) + 307);
             let centerY = (Math.random() * (720 - 410) + 410);
             let radius = (Math.random() * 25) + 25;
-            let colorIndex = Math.round(Math.random() * (Aufgabe7_Bees.colorArray.length - 1));
-            //Rückgabewert innerhalb init funktion
-            let f = new Aufgabe7_Bees.Flowers();
-            f.drawFlowers();
+            let colorIndex = Math.round(Math.random() * (colorArray.length - 1));
         }
         //Funktion drwaDeko (Früchte am Baum) Aufruf der funktion
         drawDeko(173, 429, "#Da70d6", "#Da70d6");

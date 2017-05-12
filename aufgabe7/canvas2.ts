@@ -19,8 +19,8 @@ namespace Aufgabe7_Bees {
     let nBees: number = 10;
     let imgData: ImageData;
     let squares: Square[] = [];
-    export let colorArray: string[] = [];
-    
+    let flowers: Flowers[] = [];
+
 
 
 
@@ -158,6 +158,9 @@ namespace Aufgabe7_Bees {
         drawDekoBushes1(1274, 400, "#Da70d6", "#Da70d6");
         // define an array of different colors
 
+
+
+        let colorArray: string[] = [];
         colorArray.push("red"); // 0
         colorArray.push("orange"); // 1
         colorArray.push("blue"); // 2
@@ -176,13 +179,13 @@ namespace Aufgabe7_Bees {
             let centerY: number = (Math.random() * (720 - 410) + 410);
 
             let radius: number = (Math.random() * 25) + 25;
-            
+
             let colorIndex: number = Math.round(Math.random() * (colorArray.length - 1));
 
             //Rückgabewert innerhalb init funktion
-            let f: Flowers = new Flowers( _centerX, _centerY);
-            f.drawFlowers();
-           
+            // let f: Flowers = new Flowers();
+            //f.drawFlowers();
+            //colorArray[colorIndex];
 
         }
         //Funktion drwaDeko (Früchte am Baum) Aufruf der funktion

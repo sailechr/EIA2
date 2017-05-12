@@ -7,10 +7,8 @@ namespace Aufgabe7_Bees {
         color: string;
         crc2: CanvasRenderingContext2D;
 
-        constructor(centerX: number, centerY: number) {
-            this.drawFlowers();
-            this.centerX = _centerX;
-            this.centerY = _centerY;
+        constructor(color: string) {
+            
             //            // define an array of different colors
             //
             //            colorArray.push("red"); // 0
