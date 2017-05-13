@@ -19,7 +19,7 @@ namespace Aufgabe7_Bees {
     let nBees: number = 10;
     let imgData: ImageData;
     let squares: Square[] = [];
-    let flowers: Flowers[] = [];
+    let flowers: Flower[] = [];
 
 
 
@@ -79,38 +79,6 @@ namespace Aufgabe7_Bees {
         drawBushes3(360, 400, "black", "green");
         drawDekoBushes(874, 400, "#Da70d6", "#Da70d6");
         drawDekoBushes1(1274, 400, "#Da70d6", "#Da70d6");
-        // define an array of different colors
-
-
-
-        let colorArray: string[] = [];
-        colorArray.push("red"); // 0
-        colorArray.push("orange"); // 1
-        colorArray.push("blue"); // 2
-        colorArray.push("darkorchid"); //3
-        colorArray.push("goldenrod"); //4
-        colorArray.push("tomato"); // 5
-        console.log(colorArray);
-
-
-        // define number of flowers
-        var numFlowers: number = 70;
-
-        // draw randomly placed flowers
-        for (let n: number = 0; n < numFlowers; n++) {
-            let centerX: number = (Math.random() * (1280 - 307) + 307);
-            let centerY: number = (Math.random() * (720 - 410) + 410);
-
-            let radius: number = (Math.random() * 25) + 25;
-
-            let colorIndex: number = Math.round(Math.random() * (colorArray.length - 1));
-
-            //Rückgabewert innerhalb init funktion
-            // let f: Flowers = new Flowers();
-            //f.drawFlowers();
-            //colorArray[colorIndex];
-
-        }
         //Funktion drwaDeko (Früchte am Baum) Aufruf der funktion
         drawDeko(173, 429, "#Da70d6", "#Da70d6");
         drawDeko(145, 419, "#Da70d6", "#Da70d6");
@@ -138,8 +106,38 @@ namespace Aufgabe7_Bees {
             squares[i] = s;
 
 
+        }
+        let f: Flower = new Flower(0, 0);
+        f.draw();
+        f.setRandomColor();
+        f.setRandomPosition();
+        console.log(flowers);
+        //define number of flowers
+        var numFlowers: number = 70;
+
+        // draw randomly placed flowers
+        for (let n: number = 0; n < numFlowers; n++) {
+
+
+
+            let f: Flower = new Flower(0, 0);
+            flowers.push(f);
+            flowers[n] = f;
+
+
+
+
+
 
         }
+
+
+
+
+
+
+
+
 
 
         canvas.addEventListener("click", newBees); // beim klicken auf das Canvas entstehen neue Bienen
@@ -150,6 +148,7 @@ namespace Aufgabe7_Bees {
     function newBees(): void {
         //let s: Square = { x: 300, y: 580, size: Math.random() * 1 + 2.5, color: "#8FBC8F" };
         let s: Square = new Square(300, 580);
+        s.setRandomStyle();
         squares.push(s);
     }
     //clouds in the sky

@@ -1,13 +1,27 @@
 namespace Aufgabe7_Bees {
-    export class Flowers {
+    export class Flower {
         centerX: number;
         centerY: number;
         radius: number;
         numPetals: number;
         color: string;
+        colorIndex: number;
         crc2: CanvasRenderingContext2D;
+        colorArray: string[] = [];
 
-        constructor(color: string) {
+        constructor(_centerX: number, _centerY: number) {
+            this.draw();
+            this.setRandomColor();
+            this.setRandomPosition();
+            this.radius = 5;
+            this.centerX = _centerX;
+            this.centerY = _centerY;
+            console.log(this.colorArray);
+
+
+
+
+
 
             //            // define an array of different colors
             //
@@ -22,7 +36,7 @@ namespace Aufgabe7_Bees {
         }
 
         // Funktion "drawFlowers"
-        drawFlowers(): void {
+        draw(): void {
             crc2.beginPath();
 
             // draw Petals of flowers
@@ -50,5 +64,22 @@ namespace Aufgabe7_Bees {
             crc2.fill();
 
         }
+        setRandomColor(): void {
+            // define an array of different colors 
+            this.colorArray.push("red"); // 0
+            this.colorArray.push("orange"); // 1
+            this.colorArray.push("blue"); // 2
+            this.colorArray.push("darkorchid"); //3
+            this.colorArray.push("goldenrod"); //4
+            this.colorArray.push("tomato"); // 5
+
+        }
+        setRandomPosition(): void {
+            this.centerX = (Math.random() * (1280 - 307) + 307);
+            this.centerY = (Math.random() * (720 - 410) + 410);
+            this.colorIndex = Math.round(Math.random() * (this.colorArray.length - 1));
+            this.radius = (Math.random() * 25) + 25;
+        }
+
     }
 }

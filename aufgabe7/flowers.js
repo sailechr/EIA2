@@ -1,7 +1,15 @@
 var Aufgabe7_Bees;
 (function (Aufgabe7_Bees) {
-    class Flowers {
-        constructor(color) {
+    class Flower {
+        constructor(_centerX, _centerY) {
+            this.colorArray = [];
+            this.draw();
+            this.setRandomColor();
+            this.setRandomPosition();
+            this.radius = 5;
+            this.centerX = _centerX;
+            this.centerY = _centerY;
+            console.log(this.colorArray);
             //            // define an array of different colors
             //
             //            colorArray.push("red"); // 0
@@ -14,7 +22,7 @@ var Aufgabe7_Bees;
             //
         }
         // Funktion "drawFlowers"
-        drawFlowers() {
+        draw() {
             Aufgabe7_Bees.crc2.beginPath();
             // draw Petals of flowers
             for (let n = 0; n < this.numPetals; n++) {
@@ -36,7 +44,22 @@ var Aufgabe7_Bees;
             Aufgabe7_Bees.crc2.fillStyle = "black";
             Aufgabe7_Bees.crc2.fill();
         }
+        setRandomColor() {
+            // define an array of different colors 
+            this.colorArray.push("red"); // 0
+            this.colorArray.push("orange"); // 1
+            this.colorArray.push("blue"); // 2
+            this.colorArray.push("darkorchid"); //3
+            this.colorArray.push("goldenrod"); //4
+            this.colorArray.push("tomato"); // 5
+        }
+        setRandomPosition() {
+            this.centerX = (Math.random() * (1280 - 307) + 307);
+            this.centerY = (Math.random() * (720 - 410) + 410);
+            this.colorIndex = Math.round(Math.random() * (this.colorArray.length - 1));
+            this.radius = (Math.random() * 25) + 25;
+        }
     }
-    Aufgabe7_Bees.Flowers = Flowers;
+    Aufgabe7_Bees.Flower = Flower;
 })(Aufgabe7_Bees || (Aufgabe7_Bees = {}));
 //# sourceMappingURL=flowers.js.map
