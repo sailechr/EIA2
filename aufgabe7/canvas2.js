@@ -74,7 +74,7 @@ var Aufgabe7_Bees;
         imgData = Aufgabe7_Bees.crc2.getImageData(0, 0, canvas.width, canvas.height);
         console.log(imgData);
         for (let i = 0; i < nBees; i++) {
-            // default-values
+            //Zugriff auf seperate Datei mit Blumen
             let s = new Aufgabe7_Bees.Square(200, 200);
             s.setRandomPosition();
             s.setRandomStyle();

@@ -10,16 +10,6 @@ var Aufgabe7_Bees;
             this.centerX = _centerX;
             this.centerY = _centerY;
             console.log(this.colorArray);
-            //            // define an array of different colors
-            //
-            //            colorArray.push("red"); // 0
-            //            colorArray.push("orange"); // 1
-            //            colorArray.push("blue"); // 2
-            //            colorArray.push("darkorchid"); //3
-            //            colorArray.push("goldenrod"); //4
-            //            colorArray.push("tomato"); // 5
-            //            console.log(colorArray);
-            //
         }
         // Funktion "drawFlowers"
         draw() {

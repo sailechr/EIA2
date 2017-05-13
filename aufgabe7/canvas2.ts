@@ -99,7 +99,7 @@ namespace Aufgabe7_Bees {
         imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
         console.log(imgData);
         for (let i: number = 0; i < nBees; i++) {
-            // default-values
+        //Zugriff auf seperate Datei mit Blumen
             let s: Square = new Square(200, 200);
             s.setRandomPosition();
             s.setRandomStyle();
