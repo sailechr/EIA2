@@ -5,6 +5,7 @@
 //Hiermit versichere ich, dass ich diesen
 //Code selbst geschrieben habe. Er wurde
 //nicht kopiert und auch nicht diktiert.
+//immer und überall bei separaten Dateien denselben Namespace verwenden
 var Aufgabe7_Bees;
 (function (Aufgabe7_Bees) {
     window.onload = init; // Wenn die Seite komplett geladen ist führe die init Funktion aus
@@ -13,6 +14,7 @@ var Aufgabe7_Bees;
     let imgData;
     let squares = [];
     let flowers = [];
+    //Zugriff auf init funktion
     function init() {
         canvas = document.getElementsByTagName("canvas")[0];
         Aufgabe7_Bees.crc2 = canvas.getContext("2d");

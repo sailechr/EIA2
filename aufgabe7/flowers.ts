@@ -1,3 +1,5 @@
+//immer und überall bei separaten Dateien denselben Namespace verwenden
+
 namespace Aufgabe7_Bees {
     export class Flower {
         centerX: number;

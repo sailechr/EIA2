@@ -10,7 +10,7 @@
 
 
 
-
+//immer und überall bei separaten Dateien denselben Namespace verwenden
 namespace Aufgabe7_Bees {
     window.onload = init; // Wenn die Seite komplett geladen ist führe die init Funktion aus
 
@@ -23,7 +23,7 @@ namespace Aufgabe7_Bees {
 
 
 
-
+//Zugriff auf init funktion
     function init(): void {
 
         canvas = <HTMLCanvasElement>document.getElementsByTagName("canvas")[0];

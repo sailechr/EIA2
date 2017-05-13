@@ -1,3 +1,4 @@
+//immer und überall bei separaten Dateien denselben Namespace verwenden
 var Aufgabe7_Bees;
 (function (Aufgabe7_Bees) {
     class Flower {
