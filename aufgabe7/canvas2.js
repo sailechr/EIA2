@@ -78,22 +78,21 @@ var Aufgabe7_Bees;
         for (let i = 0; i < nBees; i++) {
             //Zugriff auf seperate Datei mit Blumen
             let s = new Aufgabe7_Bees.Square(200, 200);
-            s.setRandomPosition();
-            s.setRandomStyle();
+            s.setRandomPosition1();
+            s.setRandomStyle1();
             squares[i] = s;
         }
-        let f = new Aufgabe7_Bees.Flower(0, 0);
-        f.draw();
-        f.setRandomColor();
-        f.setRandomPosition();
-        console.log(flowers);
         //define number of flowers
         var numFlowers = 70;
         // draw randomly placed flowers
         for (let n = 0; n < numFlowers; n++) {
-            let f = new Aufgabe7_Bees.Flower(0, 0);
-            flowers.push(f);
+            let f = new Aufgabe7_Bees.Flower(20, 20);
             flowers[n] = f;
+            f.draw();
+            f.setRandomColor();
+            f.setRandomPosition();
+            console.log(flowers);
+            flowers.push(f);
         }
         canvas.addEventListener("click", newBees); // beim klicken auf das Canvas entstehen neue Bienen
         canvas.addEventListener("touch", newBees); // beim drüberfahren entstehen ebenfalls neue Bienen
@@ -103,7 +102,7 @@ var Aufgabe7_Bees;
     function newBees() {
         //let s: Square = { x: 300, y: 580, size: Math.random() * 1 + 2.5, color: "#8FBC8F" };
         let s = new Aufgabe7_Bees.Square(300, 580);
-        s.setRandomStyle();
+        s.setRandomStyle1();
         squares.push(s);
     }
     //clouds in the sky

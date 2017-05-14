@@ -49,6 +49,7 @@ var Aufgabe7_Bees;
             this.centerY = (Math.random() * (720 - 410) + 410);
             this.colorIndex = Math.round(Math.random() * (this.colorArray.length - 1));
             this.radius = (Math.random() * 25) + 25;
+            this.draw();
         }
     }
     Aufgabe7_Bees.Flower = Flower;

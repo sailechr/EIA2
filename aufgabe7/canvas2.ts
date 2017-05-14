@@ -23,7 +23,7 @@ namespace Aufgabe7_Bees {
 
 
 
-//Zugriff auf init funktion
+    //Zugriff auf init funktion
     function init(): void {
 
         canvas = <HTMLCanvasElement>document.getElementsByTagName("canvas")[0];
@@ -99,19 +99,16 @@ namespace Aufgabe7_Bees {
         imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
         console.log(imgData);
         for (let i: number = 0; i < nBees; i++) {
-        //Zugriff auf seperate Datei mit Blumen
+            //Zugriff auf seperate Datei mit Blumen
             let s: Square = new Square(200, 200);
-            s.setRandomPosition();
-            s.setRandomStyle();
+            s.setRandomPosition1();
+            s.setRandomStyle1();
             squares[i] = s;
 
 
         }
-        let f: Flower = new Flower(0, 0);
-        f.draw();
-        f.setRandomColor();
-        f.setRandomPosition();
-        console.log(flowers);
+       
+
         //define number of flowers
         var numFlowers: number = 70;
 
@@ -120,11 +117,14 @@ namespace Aufgabe7_Bees {
 
 
 
-            let f: Flower = new Flower(0, 0);
-            flowers.push(f);
+            let f: Flower = new Flower(20, 20);
+
             flowers[n] = f;
-
-
+            f.draw();
+            f.setRandomColor();
+            f.setRandomPosition();
+            console.log(flowers);
+            flowers.push(f);
 
 
 
@@ -148,7 +148,7 @@ namespace Aufgabe7_Bees {
     function newBees(): void {
         //let s: Square = { x: 300, y: 580, size: Math.random() * 1 + 2.5, color: "#8FBC8F" };
         let s: Square = new Square(300, 580);
-        s.setRandomStyle();
+        s.setRandomStyle1();
         squares.push(s);
     }
     //clouds in the sky
