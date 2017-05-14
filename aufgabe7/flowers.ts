@@ -1,5 +1,5 @@
 namespace Aufgabe7_Bees {
-    export class Flowers {
+    export class Flowers {  <-- die Klasse soll nur ein Objekt beschreiben, nicht viele. Also: Flower, ohne "s"!
         centerX: number;
         centerY: number;
         radius: number;
@@ -7,8 +7,8 @@ namespace Aufgabe7_Bees {
         color: string;
         crc2: CanvasRenderingContext2D;
 
-        constructor(color: string) {
-
+        constructor(color: string) { <-- beachte Styleguide, Parameternamen sollen in diesem Kurs mit Unterstrich beginnen
+            <-- hier sollte nun der übergebene String der hierfür vorgesehenen Objekteigenschaft zugewiesen werden
             //            // define an array of different colors
             //
             //            colorArray.push("red"); // 0
@@ -22,7 +22,7 @@ namespace Aufgabe7_Bees {
         }
 
         // Funktion "drawFlowers"
-        drawFlowers(): void {
+        drawFlowers(): void { <-- es werden hier doch nicht mehrere Blumen gezeichnet und dass es um eine Blume geht, wird bereits aus dem Klassennamen deutlich. Daher einfach nur "draw"
             crc2.beginPath();
 
             // draw Petals of flowers
@@ -40,7 +40,7 @@ namespace Aufgabe7_Bees {
             }
 
             crc2.closePath();
-            crc2.fillStyle = this.color;
+            crc2.fillStyle = this.color; <-- hier wird ja die Farbeigenschaft verwendet, daher im Konstruktor definieren!
             crc2.fill();
 
             // black point in the middle of the flowers
