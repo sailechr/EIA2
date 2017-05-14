@@ -714,4 +714,4 @@ var Aufgabe7_Bees;
         window.setTimeout(animate, 20);
     }
 })(Aufgabe7_Bees || (Aufgabe7_Bees = {}));
-//# sourceMappingURL=canvas2aufgabe7.js.map
+//# sourceMappingURL=canvasaufgabe7.js.map

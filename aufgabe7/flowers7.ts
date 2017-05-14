@@ -25,7 +25,7 @@ namespace Aufgabe7_Bees {
 
 
 
-            
+
         }
 
         // Funktion "drawFlowers"
