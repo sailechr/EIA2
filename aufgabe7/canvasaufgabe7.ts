@@ -104,17 +104,6 @@ namespace Aufgabe7_Bees {
 
         console.log(imgData);
 
-        for (let i: number = 0; i < nBees; i++) {
-            //Zugriff auf seperate Datei mit Blumen
-            let s: Square = new Square(200, 200);
-            s.setRandomPosition1();
-            s.setRandomStyle1();
-            squares[i] = s;
-
-
-        }
-
-
         //define number of flowers
         let numFlowers: number = 70;
 
@@ -126,7 +115,28 @@ namespace Aufgabe7_Bees {
             flowers.push(f);
 
         }
-        console.log(flowers);
+        console.log(flowers); 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        for (let i: number = 0; i < nBees; i++) {
+            //Zugriff auf seperate Datei mit Blumen
+            let s: Square = new Square(200, 200);
+            s.setRandomPosition1();
+            s.setRandomStyle1();
+            squares[i] = s;
+
+
+        }
+
+
+       
 
 
 

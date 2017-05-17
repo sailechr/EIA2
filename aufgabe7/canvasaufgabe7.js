@@ -76,13 +76,6 @@ var Aufgabe7_Bees;
         //gemaltes Bild speichern
         imgData = Aufgabe7_Bees.crc2.getImageData(0, 0, canvas.width, canvas.height);
         console.log(imgData);
-        for (let i = 0; i < nBees; i++) {
-            //Zugriff auf seperate Datei mit Blumen
-            let s = new Aufgabe7_Bees.Square(200, 200);
-            s.setRandomPosition1();
-            s.setRandomStyle1();
-            squares[i] = s;
-        }
         //define number of flowers
         let numFlowers = 70;
         // draw randomly placed flowers
@@ -93,6 +86,13 @@ var Aufgabe7_Bees;
             Aufgabe7_Bees.flowers.push(f);
         }
         console.log(Aufgabe7_Bees.flowers);
+        for (let i = 0; i < nBees; i++) {
+            //Zugriff auf seperate Datei mit Blumen
+            let s = new Aufgabe7_Bees.Square(200, 200);
+            s.setRandomPosition1();
+            s.setRandomStyle1();
+            squares[i] = s;
+        }
         canvas.addEventListener("click", newBees); // beim klicken auf das Canvas entstehen neue Bienen
         canvas.addEventListener("touch", newBees); // beim drüberfahren entstehen ebenfalls neue Bienen
         window.setTimeout(animate, 20);
