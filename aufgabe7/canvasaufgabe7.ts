@@ -21,6 +21,9 @@ namespace Aufgabe7_Bees {
     let squares: Square[] = [];
     let flowers: Flower[] = [];
 
+    export let colors: string[] = ["red", "orange", "blue", "darkorchid", "goldenrod", "tomato"];
+
+
 
 
     //Zugriff auf init funktion
@@ -95,9 +98,12 @@ namespace Aufgabe7_Bees {
         drawDeko(164, 275, "#Da70d6", "#Da70d6");
         //Bienenstock
         drawBienenstock(500, 210, "orange", "black");
+
         //gemaltes Bild speichern
         imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
+
         console.log(imgData);
+
         for (let i: number = 0; i < nBees; i++) {
             //Zugriff auf seperate Datei mit Blumen
             let s: Square = new Square(200, 200);
@@ -110,25 +116,15 @@ namespace Aufgabe7_Bees {
        
 
         //define number of flowers
-        var numFlowers: number = 70;
+        let numFlowers: number = 70;
 
         // draw randomly placed flowers
         for (let n: number = 0; n < numFlowers; n++) {
-
-
-
             let f: Flower = new Flower(20, 20);
-
             flowers[n] = f;
             f.draw();
-            f.setRandomColor();
-            f.setRandomPosition();
-            console.log(flowers);
+            //console.log(flowers);
             flowers.push(f);
-
-
-
-
         }
 
 
@@ -192,7 +188,7 @@ namespace Aufgabe7_Bees {
         crc2.fill();
 
 
-    };
+    }
 
 
 
@@ -769,15 +765,16 @@ namespace Aufgabe7_Bees {
         crc2.putImageData(imgData, 0, 0);
         for (let i: number = 0; i < squares.length; i++) {
             let s: Square = squares[i];
-
             //Malen der Bienen an der neuen Position
             s.drawObject();
             s.move();
 
-
-
             //Malen der Bienen an der neuen Position
+        }
 
+        for (let n: number = 0; n < flowers.length; n++) {
+            let f: Flower = flowers[n];
+            f.draw();
         }
 
         window.setTimeout(animate, 20);
