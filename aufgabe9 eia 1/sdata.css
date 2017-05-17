@@ -1,0 +1,88 @@
+body {
+	font-family: "Helvetica", "Arial", sans-serif;
+	font-weight: bold;
+	font-size: 1em;
+	background-color: whitesmoke;
+	text-align: center;
+	margin: 0;
+	word-break: keep-all;
+	padding: 0;
+	width: 100%;
+
+	/*damit zwischen body und header kein Abstand ist*/
+}
+main {
+	margin-top: 220.12356px;
+	background-color: white;
+	float: left;
+	width: 80%;
+}
+/*Seitenlayout mit Div-class und margin-left/-top ordnen Boxen zu einem Layout*/
+.box {
+	float: left;
+	position: relative;
+	overflow: hidden; /*Boxen bekommen eine Schaltfläche zum Scrollen*/
+	width: 15%;
+	height: 435px;
+	font-size: 1em;
+	margin-top: 1.25em;
+	margin-left: 2.125em;
+	margin-bottom: 2em;
+	padding-bottom: 0.75em;
+	padding-right: 1em;
+	padding: 2.5em;
+	padding-top: 0.25em;
+	padding-left: 1em;
+	border: 1px solid #e9004c;
+	background-color: #ed8f52;
+	vertical-align: center;
+}
+
+ul li {
+	font-weight: bold;
+	margin: -0.5678em;
+	margin-top: 3.25em;
+	list-style-type: none;
+	text-align: left;
+	color: white;
+	font-size: 0.89em;
+}
+
+
+h3 {
+	opacity: 0.99; /*Transparenz*/
+	font-family: sans-serif;
+	text-align: center; font-weight-bold;
+	font-size: 0.89em;
+	color: white;
+}
+
+.button {
+	font-family: sans-serif;
+	color: saddlebrown;
+	background-color: yellow;
+	font-size: 0.8125em;
+	font-weight: bold;
+	border-radius: 2.5px;
+	border-top-left-radius: 1.55px;
+	/*abgerundete Ecken für den Button (Grenzen werden abgerundet)*/
+	border-top-right-radius: 2.65px;
+	border-bottom-left-radius: 1.55px;
+	border-bottom-right-radius: 2.65px;
+	width: 64%;
+	height: 26px;
+	padding: -0.5125em;
+	padding-top: -0.345;
+	border: 0.125em;
+	margin: 1.234em;
+	border-color: coral;
+	border-style: solid;
+}
+
+img {
+	display: block; /*Bilder werden prinzipiell mittig angeordnet*/
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+	height: 108px;
+}

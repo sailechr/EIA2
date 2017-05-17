@@ -1,0 +1,36 @@
+document.addEventListener('DOMContentLoaded', function () {
+    let zahlRice: number=1;
+    let zeile: number=0;
+   
+
+for (let i: number = 0; i < 64; i++) {
+   
+    let div: HTMLDivElement = document.createElement("div");
+     document.body.appendChild(div);
+    div.textContent = zahlRice.toExponential(5);
+    zahlRice= zahlRice *2;
+    zahlRice.toString();
+    
+     console.log(((i + zeile)%2));
+    if(((i + zeile) %2)==0)
+    {
+    div.className="black";
+
+    }
+    else
+     {div.className="white";
+  
+    }
+    
+    if(((i + 1)% 8)== 0)
+   {div.className +="abbruch";
+    
+        zeile ++;
+  
+}
+        
+            
+}
+ 
+    
+});

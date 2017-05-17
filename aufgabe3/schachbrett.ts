@@ -40,16 +40,37 @@ document.addEventListener("DOMContentLoaded", function(): void {
         let divs: HTMLDivElement = divlist[z];
 
 
-        divs.addEventListener("click", function(): void {
+        divs.addEventListener("click", selected);
+        function selected(): void {
             if (((z + 1) % 1) == 0) {
                 this.classList.toggle("div");
+                //toggle== umschalten !
                 console.log("yes we can");
-               
+
             }
-        });
+
+        }
     }
-    
-        
+    document.addEventListener("mousemove", displaySum); // Wird die Maus bewegt, soll das Div mit der Summe folgen
+    function displaySum(_event: MouseEvent): void {
+        let divlist: NodeListOf < HTMLDivElement > = document.getElementsByTagName("div");
+
+        let box: HTMLDivElement = <HTMLDivElement>document.getElementById("box");
+        let sum: number = 0;
+        for (let i: number = 0; i < divs.length; i++) {
+            let divs: HTMLDivElement = divlist[i];
+            if (divs[i]) {
+                sum += Math.pow(2, i);
+            }
+        }
+
+        box.textContent = "Summe: " + sum;
+
+        box.style.left = 10 + _event.clientX + "px";
+        box.style.top = 10 + _event.clientY + "px";
+    }
 });
+
+
 
 

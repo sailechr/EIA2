@@ -35,13 +35,14 @@ div{width:150px;
 	color:white;
 	
 }
-.box{position: absolute;
+#box{position: absolute;
 	background-color:black;
 	padding:0.5em 1em
 	color: white;
 	border:1px white solid;
 	z-index:2;
-	display: none;}
+	display: inline-block;}
+	
 
 	
 	

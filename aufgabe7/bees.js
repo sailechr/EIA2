@@ -2,7 +2,7 @@ var Aufgabe7_Bees;
 (function (Aufgabe7_Bees) {
     class Square {
         constructor(_x, _y) {
-            this.setRandomStyle();
+            this.setRandomStyle1();
             this.x = _x;
             this.y = _y;
         }
@@ -127,11 +127,11 @@ var Aufgabe7_Bees;
             if (this.y > 720)
                 this.y = 0;
         }
-        setRandomPosition() {
+        setRandomPosition1() {
             this.x = Math.random() * 200;
             this.y = Math.random() * 200;
         }
-        setRandomStyle() {
+        setRandomStyle1() {
             this.size = Math.random() * 2 + 4;
             this.color = "hsl(" + Math.random() * 560 + ", 100%, 80%)";
         }

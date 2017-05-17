@@ -8,7 +8,7 @@ namespace Aufgabe7_Bees {
 
 
         constructor(_x: number, _y: number) {
-            this.setRandomStyle();
+            this.setRandomStyle1();
             this.x = _x;
             this.y = _y;
         }
@@ -142,12 +142,12 @@ namespace Aufgabe7_Bees {
                 this.y = 0;
         }
 
-        setRandomPosition(): void {
+        setRandomPosition1(): void {
             this.x = Math.random() * 200;
             this.y = Math.random() * 200;
         }
 
-        setRandomStyle(): void {
+        setRandomStyle1(): void {
             this.size = Math.random() * 2 + 4;
             this.color = "hsl(" + Math.random() * 560 + ", 100%, 80%)";
         }

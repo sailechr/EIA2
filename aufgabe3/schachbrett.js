@@ -34,13 +34,14 @@ document.addEventListener("DOMContentLoaded", function () {
     let divlist = document.getElementsByTagName("div");
     for (let z = 0; z < 8; z++) {
         let divs = divlist[z];
-        divs.addEventListener("click", function () {
+        divs.addEventListener("click", selected);
+        function selected() {
             if (((z + 1) % 1) == 0) {
                 this.classList.toggle("div");
+                //toggle== umschalten !
                 console.log("yes we can");
             }
-        });
+        }
     }
 });
-//rest habe ich nicht hinbekommen :((
 //# sourceMappingURL=schachbrett.js.map

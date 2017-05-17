@@ -138,8 +138,8 @@ var CANVAS4;
         var numFlowers = 70;
         // draw randomly placed flowers
         for (let n = 0; n < numFlowers; n++) {
-            let centerX = (Math.random() * (1280 - 307) + 307);
-            let centerY = (Math.random() * (720 - 410) + 410);
+            let centerX = (Math.random() * (1280 - 440) + 440);
+            let centerY = (Math.random() * (720 - 510) + 510);
             let radius = (Math.random() * 25) + 25;
             let colorIndex = Math.round(Math.random() * (colorArray.length - 1));
             //Rückgabewert innerhalb init funktion
@@ -159,8 +159,6 @@ var CANVAS4;
         drawDeko(175, 175, "#Da70d6", "#Da70d6");
         drawDeko(225, 305, "#Da70d6", "#Da70d6");
         drawDeko(164, 275, "#Da70d6", "#Da70d6");
-        //drwa alawn with a function
-        //drawLawn();
     }
     //clouds in the sky
     function drawCloud(_x, _y, _strokeColor, _fillColor) {
