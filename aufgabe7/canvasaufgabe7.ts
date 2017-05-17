@@ -19,7 +19,7 @@ namespace Aufgabe7_Bees {
     let nBees: number = 10;
     let imgData: ImageData;
     let squares: Square[] = [];
-    let flowers: Flower[] = [];
+    export let flowers: Flower[] = [];
 
     export let colors: string[] = ["red", "orange", "blue", "darkorchid", "goldenrod", "tomato"];
 
@@ -113,7 +113,7 @@ namespace Aufgabe7_Bees {
 
 
         }
-       
+
 
         //define number of flowers
         let numFlowers: number = 70;
@@ -123,10 +123,10 @@ namespace Aufgabe7_Bees {
             let f: Flower = new Flower(20, 20);
             flowers[n] = f;
             f.draw();
-            //console.log(flowers);
             flowers.push(f);
-        }
 
+        }
+        console.log(flowers);
 
 
 

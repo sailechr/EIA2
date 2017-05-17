@@ -12,6 +12,7 @@ namespace Aufgabe7_Bees {
             this.setRandomColor();
             this.setRandomPosition();
             this.numPetals = Math.round(Math.random() * (5 - 3) + 3);
+            //Anzahl der Blätter werden über den Constructor übergeben
         }
 
         // Funktion "drawFlowers"
@@ -31,6 +32,9 @@ namespace Aufgabe7_Bees {
 
                 crc2.moveTo(this.centerX, this.centerY);
                 crc2.bezierCurveTo(x1, y1, x2, y2, this.centerX, this.centerY);
+                if (n > 10) { flowers.push(); }
+                //10Blumen werden zwischengespeichert
+                
             }
 
             crc2.closePath();
@@ -45,7 +49,9 @@ namespace Aufgabe7_Bees {
 
         }
         setRandomColor(): void {
+            //Zugriff auf Arraycolors mit Farben
             this.color = colors[Math.round(Math.random() * (colors.length - 1))];
+           console.log(colors);
         }
         setRandomPosition(): void {
             this.centerX = (Math.random() * (1280 - 307) + 307);

@@ -9,11 +9,11 @@
 var Aufgabe7_Bees;
 (function (Aufgabe7_Bees) {
     window.onload = init; // Wenn die Seite komplett geladen ist führe die init Funktion aus
-    var canvas;
-    var nBees = 10;
-    var imgData;
-    var squares = [];
-    var flowers = [];
+    let canvas;
+    let nBees = 10;
+    let imgData;
+    let squares = [];
+    Aufgabe7_Bees.flowers = [];
     Aufgabe7_Bees.colors = ["red", "orange", "blue", "darkorchid", "goldenrod", "tomato"];
     //Zugriff auf init funktion
     function init() {
@@ -38,7 +38,7 @@ var Aufgabe7_Bees;
         Aufgabe7_Bees.crc2.fillStyle = "#FFFF00";
         Aufgabe7_Bees.crc2.strokeStyle = "orange";
         Aufgabe7_Bees.crc2.lineWidth = 6;
-        var grad2 = Aufgabe7_Bees.crc2.createLinearGradient(80, 330, 93, 80);
+        let grad2 = Aufgabe7_Bees.crc2.createLinearGradient(80, 330, 93, 80);
         grad2.addColorStop(0, "yellow");
         grad2.addColorStop(1, "orange");
         Aufgabe7_Bees.crc2.fillStyle = grad2;
@@ -76,23 +76,23 @@ var Aufgabe7_Bees;
         //gemaltes Bild speichern
         imgData = Aufgabe7_Bees.crc2.getImageData(0, 0, canvas.width, canvas.height);
         console.log(imgData);
-        for (var i = 0; i < nBees; i++) {
+        for (let i = 0; i < nBees; i++) {
             //Zugriff auf seperate Datei mit Blumen
-            var s = new Aufgabe7_Bees.Square(200, 200);
+            let s = new Aufgabe7_Bees.Square(200, 200);
             s.setRandomPosition1();
             s.setRandomStyle1();
             squares[i] = s;
         }
         //define number of flowers
-        var numFlowers = 70;
+        let numFlowers = 70;
         // draw randomly placed flowers
-        for (var n = 0; n < numFlowers; n++) {
-            var f = new Aufgabe7_Bees.Flower(20, 20);
-            flowers[n] = f;
+        for (let n = 0; n < numFlowers; n++) {
+            let f = new Aufgabe7_Bees.Flower(20, 20);
+            Aufgabe7_Bees.flowers[n] = f;
             f.draw();
-            //console.log(flowers);
-            flowers.push(f);
+            Aufgabe7_Bees.flowers.push(f);
         }
+        console.log(Aufgabe7_Bees.flowers);
         canvas.addEventListener("click", newBees); // beim klicken auf das Canvas entstehen neue Bienen
         canvas.addEventListener("touch", newBees); // beim drüberfahren entstehen ebenfalls neue Bienen
         window.setTimeout(animate, 20);
@@ -100,7 +100,7 @@ var Aufgabe7_Bees;
     //Funktion neuen Bienen zeichnen
     function newBees() {
         //let s: Square = { x: 300, y: 580, size: Math.random() * 1 + 2.5, color: "#8FBC8F" };
-        var s = new Aufgabe7_Bees.Square(300, 580);
+        let s = new Aufgabe7_Bees.Square(300, 580);
         s.setRandomStyle1();
         squares.push(s);
     }
@@ -604,7 +604,7 @@ var Aufgabe7_Bees;
         Aufgabe7_Bees.crc2.lineWidth = 6;
         Aufgabe7_Bees.crc2.strokeStyle = "black";
         //Farbverlauf von schneebedeckten Gipfel zu Fels
-        var grad = Aufgabe7_Bees.crc2.createLinearGradient(80, 230, 96, 80);
+        let grad = Aufgabe7_Bees.crc2.createLinearGradient(80, 230, 96, 80);
         grad.addColorStop(0, "grey");
         grad.addColorStop(1, "whitesmoke");
         Aufgabe7_Bees.crc2.fillStyle = grad;
@@ -703,18 +703,17 @@ var Aufgabe7_Bees;
     }
     function animate() {
         Aufgabe7_Bees.crc2.putImageData(imgData, 0, 0);
-        for (var i = 0; i < squares.length; i++) {
-            var s = squares[i];
+        for (let i = 0; i < squares.length; i++) {
+            let s = squares[i];
             //Malen der Bienen an der neuen Position
             s.drawObject();
             s.move();
-            //Malen der Bienen an der neuen Position
         }
-        for (var n = 0; n < flowers.length; n++) {
-            var f = flowers[n];
+        for (let n = 0; n < Aufgabe7_Bees.flowers.length; n++) {
+            let f = Aufgabe7_Bees.flowers[n];
             f.draw();
         }
         window.setTimeout(animate, 20);
     }
-    //Bienen werden gezeichnet
 })(Aufgabe7_Bees || (Aufgabe7_Bees = {}));
+//# sourceMappingURL=canvasaufgabe7.js.map
