@@ -15,6 +15,7 @@ var Aufgabe7_Bees;
     let squares = [];
     Aufgabe7_Bees.flowers = [];
     Aufgabe7_Bees.colors = ["red", "orange", "blue", "darkorchid", "goldenrod", "tomato"];
+    console.log(Aufgabe7_Bees.colors);
     //Zugriff auf init funktion
     function init() {
         canvas = document.getElementsByTagName("canvas")[0];

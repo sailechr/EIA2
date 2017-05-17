@@ -22,7 +22,7 @@ namespace Aufgabe7_Bees {
     export let flowers: Flower[] = [];
 
     export let colors: string[] = ["red", "orange", "blue", "darkorchid", "goldenrod", "tomato"];
-
+    console.log(colors);
 
 
 
