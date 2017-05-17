@@ -51,8 +51,9 @@ namespace Aufgabe7_Bees {
         setRandomColor(): void {
             //Zugriff auf Arraycolors mit Farben
             this.color = colors[Math.round(Math.random() * (colors.length - 1))];
-           console.log(colors);
+
         }
+        
         setRandomPosition(): void {
             this.centerX = (Math.random() * (1280 - 307) + 307);
             this.centerY = (Math.random() * (720 - 410) + 410);

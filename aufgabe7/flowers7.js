@@ -37,7 +37,6 @@ var Aufgabe7_Bees;
         setRandomColor() {
             //Zugriff auf Arraycolors mit Farben
             this.color = Aufgabe7_Bees.colors[Math.round(Math.random() * (Aufgabe7_Bees.colors.length - 1))];
-            console.log(Aufgabe7_Bees.colors);
         }
         setRandomPosition() {
             this.centerX = (Math.random() * (1280 - 307) + 307);
