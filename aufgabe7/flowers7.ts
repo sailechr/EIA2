@@ -7,29 +7,16 @@ namespace Aufgabe7_Bees {
         radius: number;
         numPetals: number;
         color: string;
-        colorIndex: number;
-        crc2: CanvasRenderingContext2D;
-        colorArray: string[] = [];
 
         constructor(_centerX: number, _centerY: number) {
-            this.draw();
             this.setRandomColor();
             this.setRandomPosition();
-            this.radius = 5;
-            this.centerX = _centerX;
-            this.centerY = _centerY;
-            console.log(this.colorArray);
-
-
-
-
-
-
-
+            this.numPetals = Math.round(Math.random() * (5 - 3) + 3);
         }
 
         // Funktion "drawFlowers"
         draw(): void {
+
             crc2.beginPath();
 
             // draw Petals of flowers
@@ -37,10 +24,10 @@ namespace Aufgabe7_Bees {
                 let theta1: number = ((Math.PI * 2) / this.numPetals) * (n + 1);
                 let theta2: number = ((Math.PI * 2) / this.numPetals) * (n);
 
-                var x1: number = (this.radius * Math.sin(theta1)) + this.centerX;
-                var y1: number = (this.radius * Math.cos(theta1)) + this.centerY;
-                var x2: number = (this.radius * Math.sin(theta2)) + this.centerX;
-                var y2: number = (this.radius * Math.cos(theta2)) + this.centerY;
+                let x1: number = (this.radius * Math.sin(theta1)) + this.centerX;
+                let y1: number = (this.radius * Math.cos(theta1)) + this.centerY;
+                let x2: number = (this.radius * Math.sin(theta2)) + this.centerX;
+                let y2: number = (this.radius * Math.cos(theta2)) + this.centerY;
 
                 crc2.moveTo(this.centerX, this.centerY);
                 crc2.bezierCurveTo(x1, y1, x2, y2, this.centerX, this.centerY);
@@ -58,21 +45,12 @@ namespace Aufgabe7_Bees {
 
         }
         setRandomColor(): void {
-            // define an array of different colors 
-            this.colorArray.push("red"); // 0
-            this.colorArray.push("orange"); // 1
-            this.colorArray.push("blue"); // 2
-            this.colorArray.push("darkorchid"); //3
-            this.colorArray.push("goldenrod"); //4
-            this.colorArray.push("tomato"); // 5
-
+            this.color = colors[Math.round(Math.random() * (colors.length - 1))];
         }
         setRandomPosition(): void {
             this.centerX = (Math.random() * (1280 - 307) + 307);
             this.centerY = (Math.random() * (720 - 410) + 410);
-            this.colorIndex = Math.round(Math.random() * (this.colorArray.length - 1));
             this.radius = (Math.random() * 25) + 25;
-            this.draw();
         }
 
     }

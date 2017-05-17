@@ -121,6 +121,7 @@ namespace Aufgabe7_Bees {
             crc2.lineTo(this.x - 4, this.y - 2);
             crc2.lineTo(this.x - 4, this.y + 2);
             crc2.closePath();
+            crc2.globalAlpha = 1;
         }
 
 

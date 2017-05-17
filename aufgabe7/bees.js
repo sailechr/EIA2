@@ -1,12 +1,12 @@
 var Aufgabe7_Bees;
 (function (Aufgabe7_Bees) {
-    class Square {
-        constructor(_x, _y) {
+    var Square = (function () {
+        function Square(_x, _y) {
             this.setRandomStyle1();
             this.x = _x;
             this.y = _y;
         }
-        drawObject() {
+        Square.prototype.drawObject = function () {
             Aufgabe7_Bees.crc2.beginPath();
             Aufgabe7_Bees.crc2.fillStyle = "yellow";
             Aufgabe7_Bees.crc2.moveTo(this.x + 10, this.y);
@@ -113,8 +113,9 @@ var Aufgabe7_Bees;
             Aufgabe7_Bees.crc2.lineTo(this.x - 4, this.y - 2);
             Aufgabe7_Bees.crc2.lineTo(this.x - 4, this.y + 2);
             Aufgabe7_Bees.crc2.closePath();
-        }
-        move() {
+            Aufgabe7_Bees.crc2.globalAlpha = 1;
+        };
+        Square.prototype.move = function () {
             this.x += Math.random() * 4 - 2;
             this.y += Math.random() * 4 - 2;
             this.y += Math.random() * 4.7 - 2.5;
@@ -126,16 +127,16 @@ var Aufgabe7_Bees;
                 this.x = 1270;
             if (this.y > 720)
                 this.y = 0;
-        }
-        setRandomPosition1() {
+        };
+        Square.prototype.setRandomPosition1 = function () {
             this.x = Math.random() * 200;
             this.y = Math.random() * 200;
-        }
-        setRandomStyle1() {
+        };
+        Square.prototype.setRandomStyle1 = function () {
             this.size = Math.random() * 2 + 4;
             this.color = "hsl(" + Math.random() * 560 + ", 100%, 80%)";
-        }
-    }
+        };
+        return Square;
+    }());
     Aufgabe7_Bees.Square = Square;
 })(Aufgabe7_Bees || (Aufgabe7_Bees = {}));
-//# sourceMappingURL=bees.js.map
