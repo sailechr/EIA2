@@ -1,0 +1,20 @@
+/*Aufgabe: 4 Triberger Wasserfälle Wikipedia"
+Name: Saile Christian
+Matrikel: 254877
+Datum: 21. April 
+Hiermit versichere ich, dass ich diesen
+Code selbst geschrieben habe. Er wurde
+nicht kopiert und auch nicht diktiert.*/
+
+
+
+
+
+
+
+canvas {
+	background-color:darkgreen;/*das ist meine Wiese*/
+	margin:1em 2em 3em 4em;
+	border: 2px solid #FF4500 ;/*Farbe orangered von der umrandung*/
+}
+body{background-color:yellow;}/*Hintergrundfarbe gelb*/
