@@ -1,0 +1,28 @@
+/* 
+Aufgabe 0
+Name: saile christian
+Matrikel: 254877
+Datum: 10. Oktober 2017
+	
+Hiermit versichere ich, 
+dass ich diesen Code selbst geschrieben habe. 
+Er wurde nicht kopiert und auch nicht diktiert.*/
+
+
+
+
+
+
+
+body{background-color:yellowgreen;
+font-size:2em;
+color:white;
+font-style:"sansserif";}
+body:hover{background-color:white;
+color:yellowgreen;
+}
+
+
+section{display:inline;}
+#eingabename{font-size:3em;
+font-weight:bold;}
