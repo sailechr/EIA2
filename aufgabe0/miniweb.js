@@ -7,9 +7,9 @@
 //nicht kopiert und auch nicht diktiert.
 document.addEventListener("DOMContentLoaded", function () {
     let name;
-    name = prompt("Bitte geben Sie ihren Namen ein :)");
+    name = prompt("Please enter your Name" + "\n" + " :)");
     if (name) {
-        alert("Hallo" + name + ":)");
+        alert("Hello" + name + ":)");
     }
     document.getElementById("eingabename").innerHTML = name;
 });
