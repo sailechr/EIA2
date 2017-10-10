@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let name;
     name = prompt("Please enter your Name" + "\n" + " :)");
     if (name) {
-        alert("Hello" + name + ":)");
+        alert("Hello" + name + "\n" + ":))");
     }
     document.getElementById("eingabename").innerHTML = name;
 });

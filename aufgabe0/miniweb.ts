@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function(): void {
     let name: string;
     name = prompt("Please enter your Name" + "\n" + " :)");
     if (name) {
-        alert("Hello" + name + ":)");
+        alert("Hello" + name + "\n" + ":))");
     }
     document.getElementById("eingabename").innerHTML = name;
 });
