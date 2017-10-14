@@ -1,4 +1,4 @@
-//Aufgabe: 4 Triberger Wasserfälle Wikipedia"
+//Aufgabe 1 canvas
 //Name: Saile Christian
 //Matrikel: 254877
 //Datum: 10.Oktober 2017
@@ -299,7 +299,7 @@ namespace CANVAS4 {
         crc2.beginPath();
         crc2.fillStyle = "purple";
         crc2.strokeStyle = "black";
-        crc2.lineWidth = 1.85;
+        crc2.lineWidth = 2;
         crc2.moveTo(340, 178);
         crc2.fillRect(316, 267, 60, 40);
         crc2.closePath();
