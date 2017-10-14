@@ -27,6 +27,7 @@ var CANVAS4;
         crc2.fillStyle = "#FFFF00";
         crc2.strokeStyle = "orange";
         crc2.lineWidth = 6;
+        //Farbverlauf sonne gelb zu orange
         let grad2 = crc2.createLinearGradient(110, 300, 93, 80);
         grad2.addColorStop(0, "yellow");
         grad2.addColorStop(1, "orange");

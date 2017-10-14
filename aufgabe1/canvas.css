@@ -10,7 +10,7 @@ nicht kopiert und auch nicht diktiert.*/
 canvas {
 	background-color: white; 
 	margin: 1em 2em 3em 4em;
-	border: 3px solid #FF4500; /*Farbe orangered von der umrandung*/
+	border: 3.3px solid #FF4500; /*Farbe orangered von der umrandung*/
 	width: 69%;
 	height: 78%;
 }
