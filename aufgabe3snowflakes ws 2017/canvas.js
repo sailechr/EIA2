@@ -13,6 +13,10 @@ var CANVAS4;
     //Arrays for animations
     let arrayX = [];
     let arrayY = [];
+    let cloudsX = [];
+    let cloudsY = [];
+    let skiersX = [];
+    let skiersY = [];
     //variable, um den Hintergrund abzuspeichern
     let imgData;
     //init funktion, die Bäume, berge, Wolken usw. zeichnet
@@ -50,8 +54,7 @@ var CANVAS4;
         drawTrees(-133, 52, "black", "forestgreen");
         //Funktionsaufruf innerhalb initfunktion, die die zufällige position der Bäume bestimmt
         randomTrees();
-        drawCloud(30, 120, "#F5F5F5", "#F5F5F5");
-        drawCloud(420, 80, "#F5F5F5 ", "#F5F5F5");
+        drawSkiers(500, 200, "#A0522D ", "black");
         //snowman
         crc2.beginPath();
         crc2.fillStyle = "white ";
@@ -186,16 +189,26 @@ var CANVAS4;
         crc2.closePath();
         crc2.stroke();
         crc2.fill();
-        //Aufruf für zufällig positionierte Schneeflocken
-        //drawrandomSnowflakes();
-        window.setTimeout(animate, 200);
+        drawCloud(30, 120, "#F5F5F5", "#F5F5F5");
+        //startwert für die wolken und anzahl der wolken
+        for (let i = 0; i < 1; i++) {
+            cloudsX[i] = Math.random() * 200 + 20;
+            cloudsY[i] = Math.random() * 130;
+        }
+        //startwert für skifahrer
+        for (let i = 0; i < 4; i++) {
+            skiersX[i] = Math.random() * 950 - 20;
+            skiersY[i] = 370;
+        }
         //backgroundimage is saved
         imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
         console.log(imgData);
-        for (let i = 0; i < 250; i++) {
-            arrayX[i] = 1;
-            arrayY[i] = 10;
+        //startwert für die schneeflocken und anzahl der gezeichneten schneeflocken
+        for (let i = 0; i < 126; i++) {
+            arrayX[i] = Math.random() * 800;
+            arrayY[i] = Math.random() * 600;
         }
+        animate();
     }
     function drawMountains() {
         //draw mountains
@@ -240,7 +253,7 @@ var CANVAS4;
     }
     //clouds in the sky
     function drawCloud(_x, _y, _strokeColor, _fillColor) {
-        crc2.globalAlpha = 0.97;
+        crc2.globalAlpha = 0.99;
         crc2.beginPath();
         crc2.strokeStyle = _strokeColor;
         crc2.fillStyle = _fillColor;
@@ -351,21 +364,50 @@ var CANVAS4;
     function animate() {
         crc2.putImageData(imgData, 0, 0);
         for (let i = 0; i < arrayX.length; i++) {
-            arrayX[i] += 17 + Math.random() * 217 - 111; // hier experimentieren um
-            arrayY[i] += 33 + Math.random() * 145 - 73; // andere Bewegungsmuster zu finden
+            arrayY[i] += Math.random() * canvas.height - 400; // andere Bewegungsmuster zu finden
+            //wenn die schneeflocken die volle breite des canvas erreichen, dann sollen sie wieder beim Startwert ins bild fliegen
+            //dies gilt analog auch für die höhe, die skifahrer und für die wolke
             if (arrayY[i] >= 601) {
                 arrayY[i] = 0;
             }
             if (arrayX[i] >= 800) {
-                arrayX[i] = 2;
+                arrayX[i] = 0;
+            }
+            if (arrayX[i] <= 0) {
+                arrayX[i] = 800;
+            }
+            if (arrayY[i] <= 0) {
+                arrayY[i] = 601;
             }
             drawSnowflakes(arrayX[i], arrayY[i], "black", "whitesmoke");
         }
-        window.setTimeout(animate, 200);
+        for (let i = 0; i < cloudsX.length; i++) {
+            cloudsX[i] += 10 + Math.random() * 29 - 3; // Bewegungsmuster, das dafür sorgt, dass die wolken sich von links nach rechts durch das bild bewegen
+            if (cloudsY[i] >= 601) {
+                cloudsY[i] = 0;
+            }
+            if (cloudsX[i] >= 800) {
+                cloudsX[i] = 0;
+            }
+            drawCloud(cloudsX[i], cloudsY[i], "grey", "grey");
+        }
+        for (let i = 0; i < skiersX.length; i++) {
+            skiersX[i] += 1 + Math.random() * (-12 + 15);
+            skiersY[i] += Math.random() * 20 + (-5); // Bewegungsmuster, das dafür sorgt, dass die wolken sich von links nach rechts durch das bild bewegen
+            if (skiersY[i] >= 602) {
+                skiersY[i] = 194;
+            }
+            if (skiersX[i] >= 802) {
+                skiersX[i] = 149;
+            }
+            //probe:D
+            //            if (skiersY[i] == 602) {
+            //                skiersY[i] = 220;
+            //            }
+            drawSkiers(skiersX[i], skiersY[i], "#A0522D ", "black");
+        }
+        window.setTimeout(animate, 300);
     }
-    //arrayX[i] += 12 + Math.random() * 19 - 3; // hier experimentieren um
-    //            arrayY[i] += 10 + Math.random() * 29 - 3; // andere Bewegungsmuster zu finden
-    //bewegungsmuster für wolken
     function drawSnowflakes(_x, _y, _strokeColor, _fillColor) {
         crc2.beginPath();
         crc2.strokeStyle = _strokeColor;
@@ -406,6 +448,105 @@ var CANVAS4;
         crc2.arc(_x + 160, _y + 150, 4, 0, Math.PI * 2, true);
         crc2.closePath();
         crc2.stroke();
+        crc2.fill();
+    }
+    function drawSkiers(_x, _y, _fillColor, _strokeColor) {
+        crc2.beginPath();
+        crc2.fillStyle = _fillColor;
+        crc2.arc(_x + 200, _y + 109, 20, 0, Math.PI * 2, true);
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.fillStyle = _fillColor;
+        crc2.arc(_x + 200, _y + 79, 15, 0, Math.PI * 2, true);
+        crc2.closePath();
+        crc2.fill();
+        //knöpfe aus kleinen kreisen
+        crc2.beginPath();
+        crc2.fillStyle = "black ";
+        crc2.arc(_x + 200, _y + 98, 2.5, 0, Math.PI * 2, true);
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.fillStyle = "black ";
+        crc2.arc(_x + 200, _y + 108, 2.5, 0, Math.PI * 2, true);
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.fillStyle = "black ";
+        crc2.arc(_x + 200, _y + 118, 2.5, 0, Math.PI * 2, true);
+        crc2.closePath();
+        crc2.fill();
+        //eyes
+        crc2.beginPath();
+        crc2.fillStyle = "black ";
+        crc2.arc(_x + 195, _y + 76, 1.5, 0, Math.PI * 2, true);
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.fillStyle = "black ";
+        crc2.arc(_x + 206, _y + 76, 1.5, 0, Math.PI * 2, true);
+        crc2.closePath();
+        crc2.fill();
+        //arms
+        crc2.beginPath();
+        crc2.strokeStyle = _strokeColor;
+        crc2.moveTo(_x + 190, _y + 89);
+        crc2.lineTo(_x + 150, _y + 96);
+        crc2.lineWidth = 1;
+        crc2.closePath();
+        crc2.stroke();
+        crc2.beginPath();
+        crc2.strokeStyle = _strokeColor;
+        crc2.moveTo(_x + 208.98, _y + 89);
+        crc2.lineTo(_x + 239, _y + 106);
+        crc2.lineWidth = 1;
+        crc2.closePath();
+        crc2.stroke();
+        //head
+        crc2.beginPath();
+        crc2.fillStyle = "black ";
+        crc2.fillRect(_x + 182, _y + 56, 35, 12);
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.fillStyle = "black ";
+        crc2.fillRect(_x + 192, _y + 42, 14, 23);
+        crc2.closePath();
+        crc2.fill();
+        //scarf
+        crc2.beginPath();
+        crc2.fillStyle = "red";
+        crc2.fillRect(_x + 187, _y + 88, 25, 4.2);
+        crc2.closePath();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.fillStyle = "red ";
+        crc2.arc(_x + 193, _y + 91, 3.5, 0, Math.PI * 2, true);
+        crc2.arc(_x + 193, _y + 95, 3.5, 0, Math.PI * 2, true);
+        crc2.arc(_x + 193, _y + 99, 3.5, 0, Math.PI * 2, true);
+        crc2.arc(_x + 197, _y + 103, 3.5, 0, Math.PI * 2, true);
+        crc2.closePath();
+        crc2.fill();
+        //mouth
+        crc2.beginPath();
+        crc2.strokeStyle = _strokeColor;
+        crc2.fillStyle = "black";
+        crc2.arc(_x + 200, _y + 88, 3, 0, Math.PI * 1, true);
+        crc2.closePath();
+        crc2.stroke();
+        crc2.fill();
+        //nose
+        crc2.beginPath();
+        crc2.fillStyle = "orange ";
+        crc2.arc(_x + 200, _y + 80, 3.5, 0, Math.PI * 2, true);
+        crc2.fill();
+        crc2.closePath();
+        //ski
+        crc2.beginPath();
+        crc2.fillStyle = "red";
+        crc2.fillRect(_x + 156, _y + 128, 87, 4);
+        crc2.closePath();
         crc2.fill();
     }
     //Funktion für die zufällige Positionierung von Bäumen
