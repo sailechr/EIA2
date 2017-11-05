@@ -435,9 +435,11 @@ namespace CANVAS4 {
 
         crc2.putImageData(imgData, 0, 0);
 
-        for (let i: number = 0; i < arrayX.length; i++) {
+        for (let i: number = 0; i < arrayY.length; i++) {
 
-            arrayY[i] += Math.random() * canvas.height - 400; // andere Bewegungsmuster zu finden
+            arrayY[i] += Math.random() * canvas.height - 500;
+            arrayX[i] += 120 * Math.random();
+            // andere Bewegungsmuster zu finden
             //wenn die schneeflocken die volle breite des canvas erreichen, dann sollen sie wieder beim Startwert ins bild fliegen
             //dies gilt analog auch für die höhe, die skifahrer und für die wolke
             if (arrayY[i] >= 601) {
@@ -446,9 +448,7 @@ namespace CANVAS4 {
             if (arrayX[i] >= 800) {
                 arrayX[i] = 0;
             }
-            if (arrayX[i] <= 0) {
-                arrayX[i] = 800;
-            }
+
             if (arrayY[i] <= 0) {
                 arrayY[i] = 601;
             }
@@ -458,7 +458,7 @@ namespace CANVAS4 {
         }
         for (let i: number = 0; i < cloudsX.length; i++) {
 
-            cloudsX[i] += 10 + Math.random() * 29 - 3; // Bewegungsmuster, das dafür sorgt, dass die wolken sich von links nach rechts durch das bild bewegen
+            cloudsX[i] += Math.random() * (29 - 12); // Bewegungsmuster, das dafür sorgt, dass die wolken sich von links nach rechts durch das bild bewegen
             if (cloudsY[i] >= 601) {
                 cloudsY[i] = 0;
             }
@@ -469,8 +469,8 @@ namespace CANVAS4 {
         }
         for (let i: number = 0; i < skiersX.length; i++) {
 
-            skiersX[i] += 1 + Math.random() * (-12 + 15);
-            skiersY[i] += Math.random() * 20 + (- 5); // Bewegungsmuster, das dafür sorgt, dass die wolken sich von links nach rechts durch das bild bewegen
+            skiersX[i] += Math.random() * 5;
+            skiersY[i] += Math.random() * 24; // Bewegungsmuster, das dafür sorgt, dass die wolken sich von links nach rechts durch das bild bewegen
             if (skiersY[i] >= 602) {
                 skiersY[i] = 194;
             }
@@ -478,15 +478,15 @@ namespace CANVAS4 {
                 skiersX[i] = 149;
             }
             //probe:D
-//            if (skiersY[i] == 602) {
-//                skiersY[i] = 220;
-//            }
+            //            if (skiersY[i] == 602) {
+            //                skiersY[i] = 220;
+            //            }
 
             drawSkiers(skiersX[i], skiersY[i], "#A0522D ", "black");
 
 
         }
-        window.setTimeout(animate, 120);
+        window.setTimeout(animate, 30);
 
     }
 
