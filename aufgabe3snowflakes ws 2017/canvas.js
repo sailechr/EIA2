@@ -198,7 +198,7 @@ var CANVAS4;
         //startwert für skifahrer
         for (let i = 0; i < 4; i++) {
             skiersX[i] = Math.random() * 950 - 20;
-            skiersY[i] = 370;
+            skiersY[i] = canvas.height;
         }
         //backgroundimage is saved
         imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
@@ -406,7 +406,7 @@ var CANVAS4;
             //            }
             drawSkiers(skiersX[i], skiersY[i], "#A0522D ", "black");
         }
-        window.setTimeout(animate, 300);
+        window.setTimeout(animate, 120);
     }
     function drawSnowflakes(_x, _y, _strokeColor, _fillColor) {
         crc2.beginPath();

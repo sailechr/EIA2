@@ -242,7 +242,7 @@ namespace CANVAS4 {
         //startwert für skifahrer
         for (let i: number = 0; i < 4; i++) {
             skiersX[i] = Math.random() * 950 - 20;
-            skiersY[i] = 370;
+            skiersY[i] = canvas.height;
 
 
 
@@ -486,7 +486,7 @@ namespace CANVAS4 {
 
 
         }
-        window.setTimeout(animate, 300);
+        window.setTimeout(animate, 120);
 
     }
 
