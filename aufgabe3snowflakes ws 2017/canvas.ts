@@ -434,31 +434,34 @@ namespace CANVAS4 {
     function animate(): void {
 
         crc2.putImageData(imgData, 0, 0);
-
+//schneeflocken
         for (let i: number = 0; i < arrayY.length; i++) {
 
-            arrayY[i] += Math.random() * canvas.height - 500;
-            arrayX[i] += 120 * Math.random();
+            arrayY[i] += Math.random() * 6;
+            arrayX[i] += 3 * Math.random();
             // andere Bewegungsmuster zu finden
             //wenn die schneeflocken die volle breite des canvas erreichen, dann sollen sie wieder beim Startwert ins bild fliegen
             //dies gilt analog auch für die höhe, die skifahrer und für die wolke
-            if (arrayY[i] >= 601) {
-                arrayY[i] = 0;
+            if (arrayY[i] >= canvas.height) {
+                arrayY[i] = 10;
             }
-            if (arrayX[i] >= 800) {
-                arrayX[i] = 0;
-            }
-
-            if (arrayY[i] <= 0) {
-                arrayY[i] = 601;
+            if (arrayX[i] >= canvas.width) {
+                arrayX[i] = 12;
             }
 
+//            if (arrayY[i] <= 10) {
+//                arrayY[i] = 600;
+//            }
+//            if (arrayX[i] <= 0) {
+//                arrayX[i] = 800;
+//            }
 
             drawSnowflakes(arrayX[i], arrayY[i], "black", "whitesmoke");
         }
+        //clouds
         for (let i: number = 0; i < cloudsX.length; i++) {
 
-            cloudsX[i] += Math.random() * (29 - 12); // Bewegungsmuster, das dafür sorgt, dass die wolken sich von links nach rechts durch das bild bewegen
+            cloudsX[i] += Math.random() * (29 - 20); // Bewegungsmuster, das dafür sorgt, dass die wolken sich von links nach rechts durch das bild bewegen
             if (cloudsY[i] >= 601) {
                 cloudsY[i] = 0;
             }
@@ -467,6 +470,7 @@ namespace CANVAS4 {
             }
             drawCloud(cloudsX[i], cloudsY[i], "grey", "grey");
         }
+        //skifahrer
         for (let i: number = 0; i < skiersX.length; i++) {
 
             skiersX[i] += Math.random() * 5;
