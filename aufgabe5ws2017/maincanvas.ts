@@ -256,7 +256,7 @@ namespace CANVAS_5 {
 
 
 
-            let s: SkiersInfo = new SkiersInfo(0 + Math.random() * 950 - 20, 0 + 400, "hsl(" + Math.random() * 300 + ", 100%, 60%)", Math.random() * 18 + 6.5, Math.random() * 14 - 3);
+            let s: SkiersInfo = new SkiersInfo(Math.random() * 370, 0 + 400, "hsl(" + Math.random() * 300 + ", 100%, 60%)", Math.random() * 18 + 6.5, Math.random() * 14 - 3);
             skierS[i] = s;
 
 
@@ -347,7 +347,7 @@ namespace CANVAS_5 {
 
         // draw randomly placed Trees
         for (let n: number = 0; n < numberofTrees; n++) {
-            let x: number = 1 + (Math.random() * (343 - 100));
+            let x: number = 1 + (Math.random() * (203 - 100));
             let y: number = 1 + (Math.random() * (90 + 23));
 
 

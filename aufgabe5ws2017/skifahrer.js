@@ -17,12 +17,15 @@ var CANVAS_5;
         //
         //       }
         moveSkiers() {
-            this.positionX += Math.random() * 5 + this.movetotheRight;
+            this.positionX += -5 + this.movetotheRight;
             //s.movetotheRight= leichte Bewegung nach rechts (siehe Interface)
-            this.positionY += Math.random() * 24;
+            this.positionY += Math.random() * 22;
             // Bewegungsmuster, das dafür sorgt, dass die Skifahrer von oben nach unten durch das canvas verlaufen
-            if (this.positionX >= 602) {
-                this.positionX = 244;
+            if (this.positionX <= 0) {
+                this.positionX = 364;
+            }
+            if (this.positionX >= 801) {
+                this.positionX = 364;
             }
             if (this.positionY >= 601) {
                 this.positionY = 179;

@@ -201,7 +201,7 @@ var CANVAS_5;
         }
         //startwert für skifahrer
         for (let i = 0; i < 5; i++) {
-            let s = new CANVAS_5.SkiersInfo(0 + Math.random() * 950 - 20, 0 + 400, "hsl(" + Math.random() * 300 + ", 100%, 60%)", Math.random() * 18 + 6.5, Math.random() * 14 - 3);
+            let s = new CANVAS_5.SkiersInfo(Math.random() * 370, 0 + 400, "hsl(" + Math.random() * 300 + ", 100%, 60%)", Math.random() * 18 + 6.5, Math.random() * 14 - 3);
             skierS[i] = s;
         }
         //backgroundimage is saved
@@ -258,7 +258,7 @@ var CANVAS_5;
         let numberofTrees = 5;
         // draw randomly placed Trees
         for (let n = 0; n < numberofTrees; n++) {
-            let x = 1 + (Math.random() * (343 - 100));
+            let x = 1 + (Math.random() * (203 - 100));
             let y = 1 + (Math.random() * (90 + 23));
             //Aufruf der Funktion innerhalb der for-schleife
             drawrandomlyplacedTrees(CANVAS_5.crc2, x, y, "black", "lawngreen");
