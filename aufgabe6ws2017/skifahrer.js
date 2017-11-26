@@ -126,7 +126,7 @@ var CANVAS6;
                 this.x = 314;
             }
             if (this.y >= 601) {
-                this.y = 229;
+                this.y = 230;
             }
         }
     }
