@@ -1,7 +1,7 @@
 
 
 
-namespace CANVAS_6 {
+namespace CANVAS6 {
 
     //clouds in the sky
     export class Clouds {
@@ -69,18 +69,15 @@ namespace CANVAS_6 {
 
             super(_x, _y);
 
-          
+
 
 
 
         }
-        update(): void {
-            this.draw();
-            this.moveanimatedObject();
-        }
+
 
         draw(): void {
-            crc2.globalAlpha = 0.99;
+            crc2.globalAlpha = 1;
             crc2.beginPath();
             crc2.strokeStyle = "grey";
             crc2.fillStyle = "grey";
@@ -120,7 +117,7 @@ namespace CANVAS_6 {
             crc2.fill();
 
         }
-        moveanimatedObject(): void {
+        move(): void {
             this.x += Math.random() * (29 - 20); // Bewegungsmuster, das dafür sorgt, dass die wolken sich von links nach rechts durch das bild bewegen
             if (this.y >= 601) {
                 this.y = 0;

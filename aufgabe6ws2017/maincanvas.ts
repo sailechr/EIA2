@@ -11,15 +11,16 @@
 
 
 
-namespace CANVAS_6 {
+namespace CANVAS6 {
     window.onload = init; // Wenn die Seite komplett geladen ist, führe die init Funktion aus
 
     let canvas: HTMLCanvasElement;
     export let crc2: CanvasRenderingContext2D;
 
-    //Arrays for animations
+    //Array for animations
 
     let movingObjects: AnimatedObjects[] = [];
+
 
 
 
@@ -37,6 +38,8 @@ namespace CANVAS_6 {
         crc2 = canvas.getContext("2d");
 
 
+        console.log(movingObjects);
+
         //sky
         crc2.beginPath();
         crc2.fillStyle = "#7FFFd4 ";
@@ -46,22 +49,23 @@ namespace CANVAS_6 {
         crc2.fill();
         crc2.stroke();
 
-        console.log("hier ist jirka :D");
+        console.log("hier ist Typescript :D");
 
-        //startposition für die Sonne mithilfe einer Schleife und einer zufälligen Position der sonne
-        //        for (let i: number = 0; i < 1; i++) {
-        //            let lassoles: Sonne;
-        //            lassoles = new Sonne(Math.random() * 660, Math.random() * 50);
-        //            movingObjects.push(lassoles);
-        //
-        //
-        //        }
         //Berge
         let berg: Mountains;
         berg = new Mountains(-1, -1);
         berg.drawMountains();
+        //startposition für die Sonne mithilfe einer Schleife und einer zufälligen Position der sonne
+        for (let i: number = 0; i < 1; i++) {
+            let s: Sun = new Sun(Math.random() * 660, Math.random() * 50);
 
+            movingObjects.push(s);
+
+
+
+        }
         drawskipiste();
+
 
 
 
@@ -234,47 +238,63 @@ namespace CANVAS_6 {
         crc2.stroke();
         crc2.fill();
 
+
+
         let clouds: Clouds;
         clouds = new Clouds(30, 120, "#F5F5F5", "#F5F5F5");
         clouds.drawCloud();
+        //backgroundimage is saved
+        imgData = crc2.getImageData(0, 0, 800, 600);
+        console.log(imgData);
 
 
 
 
-        //startwert für die wolken und anzahl der wolken
-        //        for (let i: number = 0; i < 1; i++) {
-        //            let clouds: SecondCloud;
-        //            clouds = new SecondCloud(Math.random() * 200 + 20, Math.random() * 130);
-        //            movingObjects.push(clouds);
-        //
-        //
-        //        }
+
+
 
         //startwert für skifahrer
 
-        //        for (let i: number = 0; i < 5; i++) {
-        //
-        //
-        //
-        //            let s: SkiersInfo = new SkiersInfo(Math.random() * 370, 0 + 400);
-        //            movingObjects.push(s);
-        //
-        //
-        //        }
+        for (let i: number = 0; i < 5; i++) {
 
 
-        //backgroundimage is saved
 
-        imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
-        console.log(imgData);
+            let s: SkiersInfo = new SkiersInfo(100 + Math.random() * 420, 0 + 460);
+
+            movingObjects.push(s);
+
+
+        }
+
+
+
+
+
+
         //startwert für die schneeflocken und anzahl der gezeichneten schneeflocken
         for (let i: number = 0; i < 126; i++) {
-            let s: Snowflakes = new AnimatedObjects(0 + Math.random() * 800, 0 + Math.random() * 600);
+            let s: Snowflakes = new Snowflakes(0 + Math.random() * 800, 0 + Math.random() * 600);
+
             movingObjects.push(s);
 
 
 
         }
+
+
+
+        //startwert für die wolken und anzahl der wolken
+        for (let i: number = 0; i < 1; i++) {
+            let s: SecondCloud = new SecondCloud(Math.random() * 200 + 20, Math.random() * 130);
+
+            movingObjects.push(s);
+
+
+        }
+
+
+
+
 
 
 
@@ -300,12 +320,16 @@ namespace CANVAS_6 {
 
 
     function animate(): void {
-
+        crc2.clearRect(0, 0, 800, 600);
         crc2.putImageData(imgData, 0, 0);
+
 
         for (let i: number = 0; i < movingObjects.length; i++) {
             let s: AnimatedObjects = movingObjects[i];
-            s.update();
+            s.draw();
+            s.move();
+
+
 
 
 

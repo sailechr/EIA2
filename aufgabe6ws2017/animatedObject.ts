@@ -1,32 +1,40 @@
-namespace CANVAS_6 {
+namespace CANVAS6 {
     export class AnimatedObjects {
         x: number;
         y: number;
-        
+        color: string;
+        fillColor: string;
+        strokeColor: string;
 
         constructor(_x: number, _y: number) {
             console.log("Hallo");
             this.x = _x;
             this.y = _y;
 
-           
+
+
 
         }
-
         update(): void {
             this.draw();
-            this.moveanimatedObject();
+            this.move();
         }
+
         draw(): void {
             // abstract
+
+
         }
 
-        moveanimatedObject(): void {
+        move(): void {
             //abstract
+
+
+
+
         }
 
 
-        // different random style
 
     }
 }

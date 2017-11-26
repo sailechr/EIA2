@@ -1,58 +1,33 @@
-namespace CANVAS_6 {
+namespace CANVAS6 {
 
 
     export class SkiersInfo extends AnimatedObjects {
-
+        size: number;
+        movetotheLeft: number;
 
 
         constructor(_x: number, _y: number) {
             super(_x, _y);
-            
 
-
-
-
-        }
-        update(): void {
-            this.draw();
-            this.moveanimatedObject();
+            this.color = "hsl(" + Math.random() * 300 + ", 100%, 60%)";
+            this.size = Math.random() * 18 + 6.5;
+            this.movetotheLeft = Math.random() * 7 - 10;
         }
 
 
-        moveanimatedObject(): void {
 
 
-
-
-
-            this.x += - 5 + (Math.random() * 14 - 3);
-            //s.movetotheRight= leichte Bewegung nach rechts (siehe Interface)
-            this.y += Math.random() * 22;
-            // Bewegungsmuster, das dafür sorgt, dass die Skifahrer von oben nach unten durch das canvas verlaufen
-            if (this.x <= 0) {
-                this.x = 364;
-            }
-            if (this.x >= 801) {
-                this.x = 364;
-            }
-            if (this.y >= 601) {
-                this.y = 179;
-            }
-
-
-
-        }
 
         draw(): void {
             //Erklärung sieh animatefunktion
             crc2.beginPath();
-            crc2.fillStyle = "hsl(" + Math.random() * 300 + ", 100%, 60%)";
-            crc2.arc(this.x + 200, this.y + 109, Math.random() * 18 + 6.5, 0, Math.PI * 2, true);
+            crc2.fillStyle = this.color;
+            crc2.arc(this.x + 200, this.y + 109, this.size, 0, Math.PI * 2, true);
             crc2.closePath();
             crc2.fill();
             crc2.beginPath();
-            crc2.fillStyle = "hsl(" + Math.random() * 300 + ", 100%, 60%)";
-            crc2.arc(this.x + 200, this.y + 79, Math.random() * 18 + 6.5, 0, Math.PI * 2, true);
+            crc2.fillStyle = this.color;
+            crc2.arc(this.x + 200, this.y + 79, this.size, 0, Math.PI * 2, true);
             crc2.closePath();
             crc2.fill();
             //knöpfe aus kleinen kreisen
@@ -139,10 +114,34 @@ namespace CANVAS_6 {
             //ski
             crc2.beginPath();
             crc2.fillStyle = "red";
-            crc2.fillRect(this.x + 156, this.y + 128, Math.random() * 18 + 6.5 + 78, Math.random() * 18 + 6.5 - 23);
+            crc2.fillRect(this.x + 156, this.y + 128, this.size + 78, this.size - 23);
 
             crc2.closePath();
             crc2.fill();
+
+
+
+
+        }
+        move(): void {
+
+
+
+
+
+            this.x += -4 + this.movetotheLeft;
+            //s.movetotheRight= leichte Bewegung nach rechts (siehe Interface)
+            this.y += Math.random() * 8;
+            // Bewegungsmuster, das dafür sorgt, dass die Skifahrer von oben nach unten durch das canvas verlaufen
+            if (this.x <= 20) {
+                this.x = 314;
+            }
+            if (this.x >= 801) {
+                this.x = 314;
+            }
+            if (this.y >= 601) {
+                this.y = 229;
+            }
 
 
 

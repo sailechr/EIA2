@@ -1,4 +1,4 @@
-namespace CANVAS_6 {
+namespace CANVAS6 {
 
 
     //Klassen zu den Bäumen mit verschiedenen Farben

@@ -1,5 +1,5 @@
-var CANVAS_6;
-(function (CANVAS_6) {
+var CANVAS6;
+(function (CANVAS6) {
     class AnimatedObjects {
         constructor(_x, _y) {
             console.log("Hallo");
@@ -8,15 +8,15 @@ var CANVAS_6;
         }
         update() {
             this.draw();
-            this.moveanimatedObject();
+            this.move();
         }
         draw() {
             // abstract
         }
-        moveanimatedObject() {
+        move() {
             //abstract
         }
     }
-    CANVAS_6.AnimatedObjects = AnimatedObjects;
-})(CANVAS_6 || (CANVAS_6 = {}));
+    CANVAS6.AnimatedObjects = AnimatedObjects;
+})(CANVAS6 || (CANVAS6 = {}));
 //# sourceMappingURL=animatedObject.js.map

@@ -1,56 +1,53 @@
-var CANVAS_6;
-(function (CANVAS_6) {
-    class Snowflakes extends CANVAS_6.AnimatedObjects {
+var CANVAS6;
+(function (CANVAS6) {
+    class Snowflakes extends CANVAS6.AnimatedObjects {
         constructor(_x, _y) {
             super(_x, _y);
-        }
-        update() {
-            this.draw();
-            this.moveanimatedObject();
+            this.color = "whitesmoke";
         }
         draw() {
-            CANVAS_6.crc2.beginPath();
-            CANVAS_6.crc2.strokeStyle = "black";
-            CANVAS_6.crc2.fillStyle = "whitesmoke";
-            CANVAS_6.crc2.globalAlpha = 0.8;
-            CANVAS_6.crc2.arc(this.x + 40, this.y + 80, 2, 0, Math.PI * 2, true);
-            CANVAS_6.crc2.closePath();
-            CANVAS_6.crc2.stroke();
-            CANVAS_6.crc2.fill();
-            CANVAS_6.crc2.beginPath();
-            CANVAS_6.crc2.strokeStyle = "black";
-            CANVAS_6.crc2.fillStyle = "whitesmoke";
-            CANVAS_6.crc2.globalAlpha = 0.7;
-            CANVAS_6.crc2.arc(this.x + 50, this.y + 50, 3, 0, Math.PI * 2, true);
-            CANVAS_6.crc2.closePath();
-            CANVAS_6.crc2.stroke();
-            CANVAS_6.crc2.fill();
-            CANVAS_6.crc2.beginPath();
-            CANVAS_6.crc2.strokeStyle = "black";
-            CANVAS_6.crc2.fillStyle = "whitesmoke";
-            CANVAS_6.crc2.globalAlpha = 0.7;
-            CANVAS_6.crc2.arc(this.x + 20, this.y + 30, 5, 0, Math.PI * 2, true);
-            CANVAS_6.crc2.closePath();
-            CANVAS_6.crc2.stroke();
-            CANVAS_6.crc2.fill();
-            CANVAS_6.crc2.beginPath();
-            CANVAS_6.crc2.strokeStyle = "black";
-            CANVAS_6.crc2.fillStyle = "whitesmoke";
-            CANVAS_6.crc2.globalAlpha = 0.7;
-            CANVAS_6.crc2.arc(this.x + 120, this.y + 180, 2, 0, Math.PI * 2, true);
-            CANVAS_6.crc2.closePath();
-            CANVAS_6.crc2.stroke();
-            CANVAS_6.crc2.fill();
-            CANVAS_6.crc2.beginPath();
-            CANVAS_6.crc2.strokeStyle = "black";
-            CANVAS_6.crc2.fillStyle = "whitesmoke";
-            CANVAS_6.crc2.globalAlpha = 0.7;
-            CANVAS_6.crc2.arc(this.x + 160, this.y + 150, 4, 0, Math.PI * 2, true);
-            CANVAS_6.crc2.closePath();
-            CANVAS_6.crc2.stroke();
-            CANVAS_6.crc2.fill();
+            CANVAS6.crc2.beginPath();
+            CANVAS6.crc2.strokeStyle = "black";
+            CANVAS6.crc2.fillStyle = this.color;
+            CANVAS6.crc2.globalAlpha = 0.8;
+            CANVAS6.crc2.arc(this.x + 40, this.y + 80, 2, 0, Math.PI * 2, true);
+            CANVAS6.crc2.closePath();
+            CANVAS6.crc2.stroke();
+            CANVAS6.crc2.fill();
+            CANVAS6.crc2.beginPath();
+            CANVAS6.crc2.strokeStyle = "black";
+            CANVAS6.crc2.fillStyle = this.color;
+            CANVAS6.crc2.globalAlpha = 0.7;
+            CANVAS6.crc2.arc(this.x + 50, this.y + 50, 3, 0, Math.PI * 2, true);
+            CANVAS6.crc2.closePath();
+            CANVAS6.crc2.stroke();
+            CANVAS6.crc2.fill();
+            CANVAS6.crc2.beginPath();
+            CANVAS6.crc2.strokeStyle = "black";
+            CANVAS6.crc2.fillStyle = this.color;
+            CANVAS6.crc2.globalAlpha = 0.7;
+            CANVAS6.crc2.arc(this.x + 20, this.y + 30, 5, 0, Math.PI * 2, true);
+            CANVAS6.crc2.closePath();
+            CANVAS6.crc2.stroke();
+            CANVAS6.crc2.fill();
+            CANVAS6.crc2.beginPath();
+            CANVAS6.crc2.strokeStyle = "black";
+            CANVAS6.crc2.fillStyle = this.color;
+            CANVAS6.crc2.globalAlpha = 0.7;
+            CANVAS6.crc2.arc(this.x + 120, this.y + 180, 2, 0, Math.PI * 2, true);
+            CANVAS6.crc2.closePath();
+            CANVAS6.crc2.stroke();
+            CANVAS6.crc2.fill();
+            CANVAS6.crc2.beginPath();
+            CANVAS6.crc2.strokeStyle = "black";
+            CANVAS6.crc2.fillStyle = this.color;
+            CANVAS6.crc2.globalAlpha = 0.7;
+            CANVAS6.crc2.arc(this.x + 160, this.y + 150, 4, 0, Math.PI * 2, true);
+            CANVAS6.crc2.closePath();
+            CANVAS6.crc2.stroke();
+            CANVAS6.crc2.fill();
         }
-        moveanimatedObject() {
+        move() {
             this.y += Math.random() * 6;
             this.x += 3 * Math.random();
             // andere Bewegungsmuster zu finden
@@ -64,6 +61,6 @@ var CANVAS_6;
             }
         }
     }
-    CANVAS_6.Snowflakes = Snowflakes;
-})(CANVAS_6 || (CANVAS_6 = {}));
+    CANVAS6.Snowflakes = Snowflakes;
+})(CANVAS6 || (CANVAS6 = {}));
 //# sourceMappingURL=snowflakes.js.map
