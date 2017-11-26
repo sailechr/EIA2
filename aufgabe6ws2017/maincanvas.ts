@@ -259,7 +259,7 @@ namespace CANVAS6 {
 
 
 
-            let s: SkiersInfo = new SkiersInfo(100 + Math.random() * 420, 0 + 460);
+            let s: SkiersInfo = new SkiersInfo(100 + Math.random() * 640, 0 + 220);
 
             movingObjects.push(s);
 

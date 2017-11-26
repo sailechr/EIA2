@@ -140,7 +140,7 @@ namespace CANVAS6 {
             this.y += Math.random() * 8;
             // Bewegungsmuster, das dafür sorgt, dass die Skifahrer von oben nach unten durch das canvas verlaufen
             if (this.x <= 20) {
-                this.x = 314;
+                this.x = 714;
             }
             if (this.x >= 801) {
                 this.x = 314;

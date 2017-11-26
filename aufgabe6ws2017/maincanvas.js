@@ -196,7 +196,7 @@ var CANVAS6;
         console.log(imgData);
         //startwert für skifahrer
         for (let i = 0; i < 5; i++) {
-            let s = new CANVAS6.SkiersInfo(100 + Math.random() * 420, 0 + 460);
+            let s = new CANVAS6.SkiersInfo(100 + Math.random() * 640, 0 + 220);
             movingObjects.push(s);
         }
         //startwert für die schneeflocken und anzahl der gezeichneten schneeflocken
