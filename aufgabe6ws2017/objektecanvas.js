@@ -1,5 +1,12 @@
 var CANVAS6;
 (function (CANVAS6) {
+    //Aufgabe 6 canvas
+    //Name: Saile Christian
+    //Matrikel: 254877
+    //Datum: 25.November 2017
+    //Hiermit versichere ich, dass ich diesen
+    //Code selbst geschrieben habe. Er wurde
+    //nicht kopiert und auch nicht diktiert.
     //Klassen zu den Bäumen mit verschiedenen Farben
     class Trees {
         constructor(_x, _y, _strokeColor, _fillColor) {

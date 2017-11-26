@@ -1,5 +1,12 @@
 var CANVAS6;
 (function (CANVAS6) {
+    //Aufgabe 6 canvas
+    //Name: Saile Christian
+    //Matrikel: 254877
+    //Datum: 25.November 2017
+    //Hiermit versichere ich, dass ich diesen
+    //Code selbst geschrieben habe. Er wurde
+    //nicht kopiert und auch nicht diktiert.
     class SkiersInfo extends CANVAS6.AnimatedObjects {
         constructor(_x, _y) {
             super(_x, _y);

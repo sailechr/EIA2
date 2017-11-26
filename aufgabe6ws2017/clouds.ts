@@ -1,4 +1,10 @@
-
+//Aufgabe 6 canvas
+//Name: Saile Christian
+//Matrikel: 254877
+//Datum: 25.November 2017
+//Hiermit versichere ich, dass ich diesen
+//Code selbst geschrieben habe. Er wurde
+//nicht kopiert und auch nicht diktiert.
 
 
 namespace CANVAS6 {
