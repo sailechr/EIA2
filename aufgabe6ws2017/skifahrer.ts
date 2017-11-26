@@ -15,7 +15,7 @@ namespace CANVAS6 {
         constructor(_x: number, _y: number) {
             super(_x, _y);
 
-            this.color = "hsl(" + Math.random() * 300 + ", 100%, 60%)";
+            this.color = "hsl(" + Math.random() * 300 + ", 100%, 50%)";
             this.size = Math.random() * 18 + 6.5;
             this.movetotheLeft = Math.random() * 7 - 10;
         }
