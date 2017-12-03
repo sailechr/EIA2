@@ -1,3 +1,15 @@
+//Aufgabe 6 canvas
+//Name: Saile Christian
+//Matrikel: 254877
+//Datum: 25.November 2017
+//Hiermit versichere ich, dass ich diesen
+//Code selbst geschrieben habe. Er wurde
+//nicht kopiert und auch nicht diktiert.
+
+
+
+
+
 namespace StudiVZ {
     interface StudentData {
         Matrikelnummer: number;
@@ -7,7 +19,7 @@ namespace StudiVZ {
         Gender: boolean;
         Kommentar: string;
 
-        // hier ist noch die richtige Datenstruktur festzulegen
+        
     }
     var students: StudentData[] = [];
     let stop: boolean = false;
