@@ -1,0 +1,34 @@
+
+/*Aufgabe: 8 quadrat
+Name: Saile Christian
+Matrikel: 254877
+Datum: 07. dezember 2017
+Hiermit versichere ich, dass ich diesen
+Code selbst geschrieben habe. Er wurde
+nicht kopiert und auch nicht diktiert.*/
+
+
+
+
+
+
+
+button {
+	background-color: black;
+	opacity: 0.89;
+	border-color: white;
+	color: white;
+	width: 12em;
+	height: 12em;
+	margin: 5.1em; 
+	padding : 0.3em;
+	padding-bottom:1em;
+	font-size: 3em;
+	font-style: bold;
+	
+}
+
+body {
+	background-color: chocolate;
+	height:200px;
+}
