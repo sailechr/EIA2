@@ -18,17 +18,19 @@ namespace Aufgabe8 {
 
 
     function init(): void {
-
+        //Funktionsaufrufe für andere Quadrate, die man zu Beginn sieht
         drawQuadrat(50, 73, "yellow", 550, 550);
         drawQuadrat(120, 133, "orange", 550, 550);
         drawQuadrat(145, 163, "purple", 550, 550);
         drawQuadrat(165, 183, "green", 550, 550);
         drawQuadrat(195, 213, "darkgreen", 550, 550);
         drawQuadrat(225, 233, "red", 550, 550);
-
+        //button wird erstellt und dem Body hinzugefügt
         let button: HTMLButtonElement = document.createElement("button");
         document.body.appendChild(button);
+        //Text für den Button
         button.textContent = "Jetzt starten";
+        //click Event
         button.addEventListener("click", start);
 
 
@@ -37,6 +39,7 @@ namespace Aufgabe8 {
 
 
     }
+    //Parameterfunktion
     function drawQuadrat(_x: number, _y: number, _color: string, _sizeW: number, _sizeH: number): void {
 
         let div: HTMLDivElement = document.createElement("div");
@@ -64,8 +67,9 @@ namespace Aufgabe8 {
 
 
     }
+    //Parameterfunktion für zufällig platzierte Quadrate
     function drawQuadrat2(_x: number, _y: number, _color: string, _sizeW: number, _sizeH: number): void {
-
+        //div-elemente werden erstellt und dem DOM hinzugefügt
         let div: HTMLDivElement = document.createElement("div");
         document.body.appendChild(div);
 
@@ -74,10 +78,10 @@ namespace Aufgabe8 {
         s.borderColor = "white";
         s.borderWidth = "1.5px";
         s.position = "absolute";
-        s.display = "inline-block";
+        s.display = "block";
         s.backgroundColor = _color;
-        s.marginLeft = "12px";
-        s.marginTop = "12px";
+        s.marginLeft = "74px";
+        s.marginTop = "74px";
         s.width = _sizeW + "px";
         s.height = _sizeH + "px";
         s.left = _x + "px";
@@ -91,29 +95,33 @@ namespace Aufgabe8 {
 
 
     }
+    //Funktion, die durch den Click auf den Button ausgelöst wird
     function start(): void {
         alert("Buenos dias" + ":)" + "\n" + "Sie können so viele Quadrate zeichnen, wie Sie möchten." + "\n" + "So lange Sie eine Zahl zwischen 10 und 100 eingeben");
-
+        //prompt wird erzeugt
+        //parseint wandelt string in number um
         var eingabezahl: number = parseInt(prompt("Bitte geben Sie eine Zahl ein"));
-
+        //Aufruf inputtype-funktion
         inputtype(eingabezahl);
     }
     function inputtype(_eingabezahl: number): void {
+        //wenn kleiner 10, dann
         if (_eingabezahl < 10) {
             alert("Sie haben eine zu kleine Zahl eingegeben." + "\n" + "Bitte geben Sie eine Zahl zwischen 10 und 100 ein.");
 
         }
+        //wenn größer hundert, dann
         else if (_eingabezahl > 100) {
             alert("Sie haben eine zu große Zahl eingegeben." + "\n" + "Bitte geben Sie eine Zahl zwischen 10 und 100 ein.");
 
         }
-
+        //wenn größer gleich 10 und kleiner gleich 100, dann zeichne Quadrate
         if (_eingabezahl >= 10 && _eingabezahl <= 100) {
             
             for (let i: number = 0; i < _eingabezahl; i++) {
-                let x: number = 14 + (Math.random() * 770);
-                let y: number = x + 10 + (Math.random() * 340);
-                let color: string = "hsl(" + Math.random() * 200 + ", 180%, 70%)";
+                let x: number = (Math.random() * 1230);
+                let y: number =  (Math.random() * 994);
+                let color: string = "hsl(" + Math.random() * 250 + ", 180%, 80%)";
 
                 drawQuadrat2(x, y, color, 70, 70);
             }
