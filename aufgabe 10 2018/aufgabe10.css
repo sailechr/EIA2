@@ -34,10 +34,11 @@ p {
 	font-size: sans-serif;
 }
 
-#lieferzeit {
-	background-image: url(fweihnachten.jpg);
+#Lieferzeit {
+	background-image: url(weihnachten.jpg);
 	background-size: cover;
 	height: 210px;
+	background-color: #e09f5f;
 }
 
 #radio {
