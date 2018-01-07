@@ -1,0 +1,110 @@
+<html>
+
+<!--/*
+Aufgabe: 10
+Name: Saile Christian
+Matrikel: 254877
+Datum: 05.01.2018
+Hiermit versichere ich, dass ich diesen
+Code selbst geschrieben habe. Er wurde
+nicht kopiert und auch nicht diktiert.checked="checked"-->
+<head>
+<meta charset="utf-8" />
+
+
+<script src="aufgabe10a.js"></script>
+<script src="aufgabe10b.js"></script>
+<link rel="stylesheet" type="text/css" href="aufgabe10.css">
+</head>
+<body>
+	<h1>Willkommen bei Ihrem persönlichen Weihnachtsbaumkonfigurator</h1>
+	<p>Sie haben die Möglichkeit Ihren ganz persönlichen Weihnachtsbaum
+		zusammenzustellen, ohne dass Sie dabei den Preis aus den Augen
+		verlieren.</p>
+	<strong>Viel Spaß beim Konfigurieren :)</strong>
+
+
+
+
+
+
+
+
+	<fieldset id="christmastrees">
+		<legend>Christmastrees:</legend>
+
+	</fieldset>
+	<fieldset id="beleuchtung">
+		<legend>Art der Beleuchtung:</legend>
+
+	</fieldset>
+	<fieldset id="Christbaumständer">
+		<legend>Christbaumständer:</legend>
+
+	</fieldset>
+	<fieldset id="radio">
+		<legend>Konfiguration der Christbaumkugeln:</legend>
+		<div id="fontsizeradio">
+		
+			<input type="radio" name="color" value="red" id="red" /> <label
+				for="red">Red</label> <input type="radio" name="color" value="green"
+				id="green" /> <label for="green">Green</label> <input type="radio"
+				name="color" value="blue" id="blue" /> <label for="blue">Blue</label>
+			<input type="radio" name="color" value="orange" id="orange" /> <label
+				for="orange">Orange</label> <input type="radio" name="color"
+				value="purple" id="purple" /> <label for="purple">Purple</label> <input
+				type="radio" name="color" value="gold" id="gold" /> <label
+				for="gold">Gold</label> <input type="radio" name="color"
+				value="silber" id="silber" /> <label for="silber">Silber</label> <input
+				type="radio" name="color" value="colourful" id="bunt" /> <label
+				for="bunt">Bunt</label>
+				
+		</div>
+	</fieldset>
+	<fieldset id="schmuckartikel">
+		<legend> Schmuckartikel </legend>
+	</fieldset>
+
+	<fieldset id="Lieferzeit">
+		<legend>Lieferzeiten:</legend>
+		<select name="auswahl" id="delivery">
+			<option  value="Standard"
+				selected="selected">Standard 1 Woche</option>
+			<option  value="Premium">Premium 3 Tage</option>
+			<option  value="Express">innerhalb 24 Stunden</option>
+
+		</select>
+
+	</fieldset>
+
+	<fieldset id="lieferadresse">
+		<legend> Lieferadresse:</legend>
+		Name <input type="text" name="name" placeholder="Müller" required
+			id="name"> Vorname <input type="text" name="vorname"
+			placeholder="Heinrich" required id="vorname">
+		<legend>Adresse</legend>
+		Straße <input type="text" name="street" placeholder="Baumannstraße 3"
+			required id="street"> Ort <input type="text" name="place"
+			placeholder="Bad Dürrheim" required id="place"> Postleitzahl
+		<input type="text" name="postleitzahl" placeholder="78073" required
+			id="postleitzahl">
+
+	</fieldset>
+	<fieldset id="Auftragsstatus">
+		<legend>Auftragsstatus: </legend>
+		<h4>Ihr persönlicher Weihnachtsbaum:</h4>
+		<p>
+			<strong>Hinweis:</strong>Wenn Sie bei der Auswahl der Kugelfarben auf
+			bun geklickt haben, dann wird aus alle angegebenen Farbenein Mix
+			erstellt.
+		</p>
+		<p id="auswahl"></p>
+		<h4>Summe in Euro:</h4>
+		<p id="summe"></p>
+
+		<button id="submit" type="submit">Submit</button>
+	</fieldset>
+
+
+</body>
+</html>
