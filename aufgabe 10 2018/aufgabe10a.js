@@ -106,22 +106,22 @@ var SendData;
         auswahl.textContent = "";
         for (let i = 0; i < inputChristbaumständer.length; i++) {
             if (parseInt(inputChristbaumständer[i].value) > 0) {
-                auswahl.textContent += inputChristbaumständer[i].name + " " + "in Euro:" + "\n" + (parseInt(inputChristbaumständer[i].value) * 45) + "€" + "\n" + "Einzelpreis liegt bei 45 Euro" + "\n";
+                auswahl.textContent += inputChristbaumständer[i].name + "\n" + "\n" + "in Euro:" + (parseInt(inputChristbaumständer[i].value) * 45) + "\n" + "€" + "\n" + "Einzelpreis  45 Euro." + "\n";
             }
         }
         for (let i = 0; i < inputSchmuckartikel.length; i++) {
             if (parseInt(inputSchmuckartikel[i].value) > 0) {
-                auswahl.textContent += inputSchmuckartikel[i].name + " " + "in Euro:" + "\n" + (parseInt(inputSchmuckartikel[i].value) * 4) + "€" + "\n" + "Einzelpreis liegt bei 4 Euro" + "\n" + "Alle Schmuckartikel wurden aus hochwertigen Glas gefertigt." + "\n";
+                auswahl.textContent += inputSchmuckartikel[i].name + "\n" + "\n" + "in Euro:" + (parseInt(inputSchmuckartikel[i].value) * 4) + "\n" + "€" + "\n" + "Einzelpreis  4 Euro." + "\n";
             }
         }
         for (let i = 0; i < inputKerzenart.length; i++) {
             if (parseInt(inputKerzenart[i].value) > 0) {
-                auswahl.textContent += inputKerzenart[i].name + " " + "in Euro:" + "\n" + (parseInt(inputKerzenart[i].value) * 10) + "€" + "\n" + "Einzelpreis liegt bei 10 Euro" + "\n";
+                auswahl.textContent += inputKerzenart[i].name + "\n" + "\n" + "in Euro:" + (parseInt(inputKerzenart[i].value) * 10) + "\n" + "€" + "\n" + "Einzelpreis  10 Euro." + "\n";
             }
         }
         for (let i = 0; i < inputBaum.length; i++) {
             if (parseInt(inputBaum[i].value) > 0) {
-                auswahl.textContent += inputBaum[i].name + " " + "in Euro:" + "\n" + (parseInt(inputBaum[i].value) * 50) + "€" + "\n" + "Einzelpreis liegt bei 50 Euro" + "\n";
+                auswahl.textContent += inputBaum[i].name + "\n" + "\n" + "in Euro:" + (parseInt(inputBaum[i].value) * 50) + "\n" + "€" + "\n" + "Einzelpreis  50 Euro." + "\n";
             }
         }
         //Summe im HTML
