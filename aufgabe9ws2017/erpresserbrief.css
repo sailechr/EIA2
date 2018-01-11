@@ -1,0 +1,11 @@
+.div {
+	background-color: black;
+	border-width: 2px; 
+	border-style: solid;
+	font-Weight: bolder;
+	color: white;
+}
+
+section {
+	margin-left: 50em;
+}
