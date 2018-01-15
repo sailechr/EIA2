@@ -106,22 +106,22 @@ var SendData;
         auswahl.textContent = "";
         for (let i = 0; i < inputChristbaumständer.length; i++) {
             if (parseInt(inputChristbaumständer[i].value) > 0) {
-                auswahl.textContent += inputChristbaumständer[i].name + "\n" + "\n" + "in Euro:" + (parseInt(inputChristbaumständer[i].value) * 45) + "\n" + "€" + "\n" + "Einzelpreis  45 Euro." + "\n";
+                auswahl.textContent += inputChristbaumständer[i].name + "\n" + "\n" + "in Euro:" + (parseInt(inputChristbaumständer[i].value) * SendData.preisChristbaumständer) + "\n" + "€" + "\n" + "Einzelpreis  45 Euro." + "\n";
             }
         }
         for (let i = 0; i < inputSchmuckartikel.length; i++) {
             if (parseInt(inputSchmuckartikel[i].value) > 0) {
-                auswahl.textContent += inputSchmuckartikel[i].name + "\n" + "\n" + "in Euro:" + (parseInt(inputSchmuckartikel[i].value) * 4) + "\n" + "€" + "\n" + "Einzelpreis  4 Euro." + "\n";
+                auswahl.textContent += inputSchmuckartikel[i].name + "\n" + "\n" + "in Euro:" + (parseInt(inputSchmuckartikel[i].value) * SendData.christbaumschmuckPreis) + "\n" + "€" + "\n" + "Einzelpreis  4 Euro." + "\n";
             }
         }
         for (let i = 0; i < inputKerzenart.length; i++) {
             if (parseInt(inputKerzenart[i].value) > 0) {
-                auswahl.textContent += inputKerzenart[i].name + "\n" + "\n" + "in Euro:" + (parseInt(inputKerzenart[i].value) * 10) + "\n" + "€" + "\n" + "Einzelpreis  10 Euro." + "\n";
+                auswahl.textContent += inputKerzenart[i].name + "\n" + "\n" + "in Euro:" + (parseInt(inputKerzenart[i].value) * SendData.christbaumbeleuchtungPreis) + "\n" + "€" + "\n" + "Einzelpreis  10 Euro." + "\n";
             }
         }
         for (let i = 0; i < inputBaum.length; i++) {
             if (parseInt(inputBaum[i].value) > 0) {
-                auswahl.textContent += inputBaum[i].name + "\n" + "\n" + "in Euro:" + (parseInt(inputBaum[i].value) * 50) + "\n" + "€" + "\n" + "Einzelpreis  50 Euro." + "\n";
+                auswahl.textContent += inputBaum[i].name + "\n" + "\n" + "in Euro:" + (parseInt(inputBaum[i].value) * SendData.bäumePrice) + "\n" + "€" + "\n" + "Einzelpreis  50 Euro." + "\n";
             }
         }
         //Summe im HTML
@@ -130,33 +130,28 @@ var SendData;
     }
     function berechnePreisdesWarenkorbs() {
         let summe = 0;
-        let preis;
         //Innerhalb der Array-Länge der Christbaumständer wird die Summe um den preis des Produkts hochgezählt
         for (let i = 0; i < inputChristbaumständer.length; i++) {
-            preis = 45;
             if (inputChristbaumständer[i].value) {
-                summe += (parseInt(inputChristbaumständer[i].value) * preis);
+                summe += (parseInt(inputChristbaumständer[i].value) * SendData.preisChristbaumständer);
             }
         }
         //Innerhalb der Array-Länge des Christbaumschmucks wird die Summe um den preis des Produkts hochgezählt
         for (let i = 0; i < inputSchmuckartikel.length; i++) {
-            preis = 4;
             if (inputSchmuckartikel[i].value) {
-                summe += (parseInt(inputSchmuckartikel[i].value) * preis);
+                summe += (parseInt(inputSchmuckartikel[i].value) * SendData.christbaumschmuckPreis);
             }
         }
         //Innerhalb der Array-Länge der Beleuchtung die Summe um den preis des Produkts hochgezählt
         for (let i = 0; i < inputKerzenart.length; i++) {
-            preis = 10;
             if (inputKerzenart[i].value) {
-                summe += (parseInt(inputKerzenart[i].value) * preis);
+                summe += (parseInt(inputKerzenart[i].value) * SendData.christbaumbeleuchtungPreis);
             }
         }
         //Innerhalb der Array-Länge der Bäume wird die Summe um den preis des Produkts hochgezählt
         for (let i = 0; i < inputBaum.length; i++) {
-            preis = 50;
             if (inputBaum[i].value) {
-                summe += (parseInt(inputBaum[i].value) * preis);
+                summe += (parseInt(inputBaum[i].value) * SendData.bäumePrice);
             }
         }
         console.log(summe);
@@ -205,7 +200,7 @@ var SendData;
                 numberOfHalterungen += 1;
         }
         if (numberOfHalterungen == 0) {
-            prüfen.push("Christbaumständer?\n");
+            prüfen.push("Christbaumständer\n");
         }
         //Schmuck für den Baum
         let numberOfChristbaumschmuck = 0;
@@ -273,6 +268,30 @@ var SendData;
         }
         else if (radio.checked == false) {
             alert("Bitte eine Checkbox auswählen!");
+        }
+        //überprüfung ob Inhalte richtig sind von dem Kontaktformular
+        let rückmeldung = document.getElementById("rückmeldung");
+        let input = document.getElementById("name");
+        let input1 = document.getElementById("vorname");
+        let input2 = document.getElementById("street");
+        let input3 = document.getElementById("hausnummer");
+        let input4 = document.getElementById("place");
+        let input5 = document.getElementById("postleitzahl");
+        //        prüft, ob Eingabe eine Zahl, Buchstaben oder ohne leerzeichen eingegeben werden oder nicht, 
+        //        BSP: wenn es keine Zahl ist, dann ist ein Fehler aufgetreten
+        if (input.checkValidity() == false || input1.checkValidity() == false || input2.checkValidity() == false || input3.checkValidity() == false || input4.checkValidity() == false || input5.checkValidity() == false) {
+            //Eingaben sind falsch
+            prüfen.push("Error");
+            rückmeldung.innerText = "Error";
+            rückmeldung.style.color = "red";
+            rückmeldung.style.fontWeight = "bold";
+        }
+        else {
+            //Eingaben sind korrekt
+            prüfen.push("Eingaben sind korrekt");
+            rückmeldung.innerText = "Eingaben sind korrekt";
+            rückmeldung.style.color = "white";
+            rückmeldung.style.fontWeight = "bold";
         }
         if (prüfen.length > 1) {
             for (let i = 0; i < prüfen.length; i++)

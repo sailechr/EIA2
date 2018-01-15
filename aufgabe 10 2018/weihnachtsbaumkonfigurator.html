@@ -45,7 +45,7 @@ nicht kopiert und auch nicht diktiert.checked="checked"-->
 	<fieldset id="radio">
 		<legend>Farben der Kugeln:</legend>
 		<div id="fontsizeradio">
-		
+
 			<input type="radio" name="color" value="red" id="red" /> <label
 				for="red">Red</label> <input type="radio" name="color" value="green"
 				id="green" /> <label for="green">Green</label> <input type="radio"
@@ -58,7 +58,7 @@ nicht kopiert und auch nicht diktiert.checked="checked"-->
 				value="silber" id="silber" /> <label for="silber">Silber</label> <input
 				type="radio" name="color" value="colourful" id="bunt" /> <label
 				for="bunt">Bunt</label>
-				
+
 		</div>
 	</fieldset>
 	<fieldset id="schmuckartikel">
@@ -68,10 +68,10 @@ nicht kopiert und auch nicht diktiert.checked="checked"-->
 	<fieldset id="Lieferzeit">
 		<legend>Lieferzeiten:</legend>
 		<select name="auswahl" id="delivery">
-			<option  value="Standard"
-				selected="selected">Standard 1 Woche</option>
-			<option  value="Premium">Premium 3 Tage</option>
-			<option  value="Express">innerhalb 24 Stunden</option>
+			<option value="Standard" selected="selected">Standard 1
+				Woche</option>
+			<option value="Premium">Premium 3 Tage</option>
+			<option value="Express">innerhalb 24 Stunden</option>
 
 		</select>
 
@@ -79,14 +79,21 @@ nicht kopiert und auch nicht diktiert.checked="checked"-->
 
 	<fieldset id="lieferadresse">
 		<legend> Lieferadresse:</legend>
-		Name <input type="text" name="name" placeholder="Müller" required
+		Name <input type="text" name="name" placeholder="Müller" required pattern="[A-Z][a-z]+"
+			
 			id="name"> Vorname <input type="text" name="vorname"
-			placeholder="Heinrich" required id="vorname">
+			placeholder="Heinrich" required pattern="[A-Z][a-z]+"
+			
+			id="vorname">
 		<legend>Adresse</legend>
 		Straße <input type="text" name="street" placeholder="Baumannstraße 3"
-			required id="street"> Ort <input type="text" name="place"
-			placeholder="Bad Dürrheim" required id="place"> Postleitzahl
-		<input type="text" name="postleitzahl" placeholder="78073" required
+			required pattern="^\S*$" title="Bitte kein Leerzeichen" id="street"> Hausnummer <input
+			type="text" name="hausnummer" placeholder="7" required
+			pattern="[0-9]{1-3}" title="Bitte die 3-stellige hausnummer eingeben" id="hausnummer"> Ort <input type="text"
+			name="place" placeholder="Bad Dürrheim" required pattern="^\S*$" title="Bitte kein Leerzeichen"
+			id="place"> Postleitzahl <input type="text"
+			name="postleitzahl" placeholder="78073" required pattern="[0-9]{5}"
+			title="Bitte die 5-stellige Postleitzahl eingeben"
 			id="postleitzahl">
 
 	</fieldset>
@@ -98,11 +105,14 @@ nicht kopiert und auch nicht diktiert.checked="checked"-->
 			bun geklickt haben, dann wird aus alle angegebenen Farbenein Mix
 			erstellt.
 		</p>
-		<p id="auswahl"><br></p>
+		<div id="auswahl">
+			<br>
+		</div>
 		<h2>Summe in Euro:</h2>
 		<p id="summe"></p>
 
 		<button id="submit" type="submit">Submit</button>
+		<div id="rückmeldung"></div>
 	</fieldset>
 
 

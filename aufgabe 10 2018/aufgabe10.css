@@ -165,11 +165,11 @@ fieldset {
 /*bis 1071 px*/
 @media screen and (min-width:1072px) {
 	h1 {
-		font-size: 1.5em;
+		font-size: 1.4em;
 		margin-left: 3%;
 	}
 	p {
-		font-size: 1.1em;
+		font-size: 1em;
 		margin-left: 3.5%;
 	}
 	input[type="radio"], label {
@@ -177,15 +177,16 @@ fieldset {
 	}
 	fieldset {
 		width: 46%;
-		font-size: 1.3em;
+		font-size: 1em;
+		height:45%;
 	}
 	h2 {
 		font-size: 1.34em;
 	}
 	#Lieferzeit {
-		height: 299px;
+		height: 290px;
 	}
 	#radio {
-		height: 193px;
+		height: 290px;
 	}
 }

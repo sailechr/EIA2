@@ -101,6 +101,7 @@ namespace SendData {
             input.max = "100";
             input.value = "0";
 
+
             beleuchtung.appendChild(label);
             input.setAttribute("name", christbaumbeleuchtung[i]);
             inputKerzenart.push(input);
@@ -121,6 +122,7 @@ namespace SendData {
             input.max = "100";
             input.value = "0";
 
+
             christbaumhalterung.appendChild(label);
             input.setAttribute("name", halterung[i]);
             inputChristbaumständer.push(input);
@@ -136,24 +138,24 @@ namespace SendData {
 
         for (let i: number = 0; i < inputChristbaumständer.length; i++) {
             if (parseInt(inputChristbaumständer[i].value) > 0) {
-                auswahl.textContent += inputChristbaumständer[i].name + " " + "in Euro:" + "\n" + (parseInt(inputChristbaumständer[i].value) * 45) + "€" + "\n" + "Einzelpreis liegt bei 45 Euro" + "\n";
+                auswahl.textContent += inputChristbaumständer[i].name + "\n" + "\n" + "in Euro:" + (parseInt(inputChristbaumständer[i].value) * preisChristbaumständer) + "\n" + "€" + "\n" + "Einzelpreis  45 Euro." + "\n";
             }
         }
 
         for (let i: number = 0; i < inputSchmuckartikel.length; i++) {
             if (parseInt(inputSchmuckartikel[i].value) > 0) {
-                auswahl.textContent += inputSchmuckartikel[i].name + " " + "in Euro:" + "\n" + (parseInt(inputSchmuckartikel[i].value) * 4) + "€" + "\n" + "Einzelpreis liegt bei 4 Euro" + "\n" + "Alle Schmuckartikel wurden aus hochwertigen Glas gefertigt." + "\n";
+                auswahl.textContent += inputSchmuckartikel[i].name + "\n" + "\n" + "in Euro:" + (parseInt(inputSchmuckartikel[i].value) * christbaumschmuckPreis) + "\n" + "€" + "\n" + "Einzelpreis  4 Euro." + "\n";
             }
         }
 
         for (let i: number = 0; i < inputKerzenart.length; i++) {
             if (parseInt(inputKerzenart[i].value) > 0) {
-                auswahl.textContent += inputKerzenart[i].name + " " + "in Euro:" + "\n" + (parseInt(inputKerzenart[i].value) * 10) + "€" + "\n" + "Einzelpreis liegt bei 10 Euro" + "\n";
+                auswahl.textContent += inputKerzenart[i].name + "\n" + "\n" + "in Euro:" + (parseInt(inputKerzenart[i].value) * christbaumbeleuchtungPreis) + "\n" + "€" + "\n" + "Einzelpreis  10 Euro." + "\n";
             }
         }
         for (let i: number = 0; i < inputBaum.length; i++) {
             if (parseInt(inputBaum[i].value) > 0) {
-                auswahl.textContent += inputBaum[i].name + " " + "in Euro:" + "\n" + (parseInt(inputBaum[i].value) * 50) + "€" + "\n" + "Einzelpreis liegt bei 50 Euro" + "\n";
+                auswahl.textContent += inputBaum[i].name + "\n" + "\n" + "in Euro:" + (parseInt(inputBaum[i].value) * bäumePrice) + "\n" + "€" + "\n" + "Einzelpreis  50 Euro." + "\n";
             }
         }
 
@@ -163,36 +165,36 @@ namespace SendData {
     }
     function berechnePreisdesWarenkorbs(): void {
         let summe: number = 0;
-        let preis: number;
+
         //Innerhalb der Array-Länge der Christbaumständer wird die Summe um den preis des Produkts hochgezählt
         for (let i: number = 0; i < inputChristbaumständer.length; i++) {
-            preis = 45;
-           
+
+
             if (inputChristbaumständer[i].value) {
 
-                summe += (parseInt(inputChristbaumständer[i].value) * preis);
+                summe += (parseInt(inputChristbaumständer[i].value) * preisChristbaumständer);
             }
 
 
         }
         //Innerhalb der Array-Länge des Christbaumschmucks wird die Summe um den preis des Produkts hochgezählt
         for (let i: number = 0; i < inputSchmuckartikel.length; i++) {
-            preis = 4;
+
 
             if (inputSchmuckartikel[i].value) {
 
-                summe += (parseInt(inputSchmuckartikel[i].value) * preis);
+                summe += (parseInt(inputSchmuckartikel[i].value) * christbaumschmuckPreis);
             }
 
 
         }
         //Innerhalb der Array-Länge der Beleuchtung die Summe um den preis des Produkts hochgezählt
         for (let i: number = 0; i < inputKerzenart.length; i++) {
-            preis = 10;
+
 
             if (inputKerzenart[i].value) {
 
-                summe += (parseInt(inputKerzenart[i].value) * preis);
+                summe += (parseInt(inputKerzenart[i].value) * christbaumbeleuchtungPreis);
             }
 
 
@@ -200,11 +202,11 @@ namespace SendData {
 
         //Innerhalb der Array-Länge der Bäume wird die Summe um den preis des Produkts hochgezählt
         for (let i: number = 0; i < inputBaum.length; i++) {
-            preis = 50;
+
 
             if (inputBaum[i].value) {
 
-                summe += (parseInt(inputBaum[i].value) * preis);
+                summe += (parseInt(inputBaum[i].value) * bäumePrice);
             }
 
 
@@ -274,7 +276,7 @@ namespace SendData {
                 numberOfHalterungen += 1;
         }
         if (numberOfHalterungen == 0) {
-            prüfen.push("Christbaumständer?\n");
+            prüfen.push("Christbaumständer\n");
         }
         //Schmuck für den Baum
         let numberOfChristbaumschmuck: number = 0;
@@ -345,6 +347,32 @@ namespace SendData {
             alert("Bitte eine Checkbox auswählen!");
 
         }
+        //überprüfung ob Inhalte richtig sind von dem Kontaktformular
+        let rückmeldung: HTMLDivElement = <HTMLDivElement>document.getElementById("rückmeldung");
+
+        let input: HTMLInputElement = <HTMLInputElement>document.getElementById("name");
+        let input1: HTMLInputElement = <HTMLInputElement>document.getElementById("vorname");
+        let input2: HTMLInputElement = <HTMLInputElement>document.getElementById("street");
+        let input3: HTMLInputElement = <HTMLInputElement>document.getElementById("hausnummer");
+        let input4: HTMLInputElement = <HTMLInputElement>document.getElementById("place");
+        let input5: HTMLInputElement = <HTMLInputElement>document.getElementById("postleitzahl");
+//        prüft, ob Eingabe eine Zahl, Buchstaben oder ohne leerzeichen eingegeben werden oder nicht, 
+//        BSP: wenn es keine Zahl ist, dann ist ein Fehler aufgetreten
+        if (input.checkValidity() == false || input1.checkValidity() == false || input2.checkValidity() == false || input3.checkValidity() == false || input4.checkValidity() == false || input5.checkValidity() == false) {
+            //Eingaben sind falsch
+            prüfen.push("Error");
+            rückmeldung.innerText = "Error";
+            rückmeldung.style.color = "red";
+            rückmeldung.style.fontWeight = "bold";
+        }
+        else {
+            //Eingaben sind korrekt
+            prüfen.push("Eingaben sind korrekt");
+            rückmeldung.innerText = "Eingaben sind korrekt";
+            rückmeldung.style.color = "white";
+            rückmeldung.style.fontWeight = "bold";
+        }
+
 
 
 
