@@ -1,0 +1,46 @@
+/*Aufgabe: abschluss canvas
+Name: Saile Christian
+Matrikel: 254877
+Datum: 22.Feburar 2018 
+Hiermit versichere ich, dass ich diesen
+Code selbst geschrieben habe. Er wurde
+nicht kopiert und auch nicht diktiert.*/
+
+/*breite bis 570px*/
+canvas {
+	background-color: white;
+	margin: 1em 2em 3em 4em;
+	border: 3.3px solid #ffff80; /*Farbe orangered von der umrandung*/
+	width: 69%;
+	height: 78%;
+}
+
+h1 {
+	color: orange;
+	font-weight: bold;
+}
+
+body {
+	background-color: whitesmoke;
+} /*Hintergrundfarbe gelb*/
+/*breite bis768px*/
+@media screen and (min-width:571px) {
+	canvas {
+		width: 70%;
+		height: 86%;
+	}
+}
+/*breite bis 1024px*/
+@media screen and (min-width:769px) {
+	canvas {
+		width: 75%;
+		height: 96%;
+	}
+}
+/*breite ab 1025px*/
+@media screen and (min-width:1025px) {
+	canvas {
+		width: 80%;
+		height: 90%;
+	}
+}
