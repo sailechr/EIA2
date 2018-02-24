@@ -24,6 +24,7 @@ var CANVAS;
     function init() {
         canvas = document.getElementsByTagName("canvas")[0];
         CANVAS.crc2 = canvas.getContext("2d");
+        //Aufruf canvas clicked
         canvas.addEventListener("click", canvasClicked);
         infos();
         //background
@@ -88,15 +89,7 @@ var CANVAS;
         }
         window.setTimeout(animate, 30);
     }
-    // Die Größe des Canvas wird auf die Größe des Fensters/der Ansicht skaliert
-    function resizeCanvas() {
-        let margin = 50;
-        let canvas;
-        canvas = document.getElementsByTagName("canvas")[0];
-        canvas.width = window.innerWidth - margin;
-        canvas.height = window.innerHeight - margin;
-    }
-    //man bekommet die richtige Position des Klicks auf dem Canvas durch den zuvor definierten margin
+    //man bekommet die richtige Position des Klicks auf dem Canvas
     function canvasClicked(_event) {
         let canvas;
         canvas = document.getElementsByTagName("canvas")[0];

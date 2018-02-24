@@ -39,6 +39,7 @@ namespace CANVAS {
 
         canvas = <HTMLCanvasElement>document.getElementsByTagName( "canvas" )[0];
         crc2 = canvas.getContext( "2d" );
+        //Aufruf canvas clicked
         canvas.addEventListener( "click", canvasClicked );
 
         infos();
@@ -55,6 +56,7 @@ namespace CANVAS {
         crc2.stroke();
         //Aufruf von funktion die graue Umrandung zeichnet
         drawBorder();
+        
 
 
 
@@ -154,21 +156,12 @@ namespace CANVAS {
 
 
 
-    // Die Größe des Canvas wird auf die Größe des Fensters/der Ansicht skaliert
-
-    function resizeCanvas(): void {
-
-        let margin: number = 50;
-        let canvas: HTMLCanvasElement;
-        canvas = document.getElementsByTagName( "canvas" )[0];
-        canvas.width = window.innerWidth - margin;
-        canvas.height = window.innerHeight - margin;
-    }
+    
 
 
 
 
-    //man bekommet die richtige Position des Klicks auf dem Canvas durch den zuvor definierten margin
+    //man bekommet die richtige Position des Klicks auf dem Canvas
 
     function canvasClicked( _event: MouseEvent ): void {
         let canvas: HTMLCanvasElement;
